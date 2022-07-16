@@ -1,26 +1,29 @@
 import React from 'react';
 
-function Weather({ weatherData, iconUrl }) {
-  const main = weatherData.main;
-  const desc = weatherData.weather[0];
-  const sys = weatherData.sys;
+function Weather({ weatherData }) {
+  const current = weatherData.current;
+  const condition = weatherData.current.condition;
+  const forecast = weatherData.forecast.forecastday;
+  const location = weatherData.location;
 
   return (
     <div>
       <h1>
-        {weatherData.name}, {sys.country}
+        {location.name}, {location.region}
       </h1>
-      <p>Feels like: {Math.round(main.feels_like)}&#8457;</p>
-      <p>Humidity: {main.humidity}</p>
-      <p>Pressure: {main.pressure}</p>
-      <p>Temp: {Math.round(main.temp)}&#8457;</p>
-      <p>Temp Max: {Math.round(main.temp_max)}&#8457;</p>
-      <p>Temp Min: {Math.round(main.temp_min)}&#8457;</p>
-      <p>Description: {desc.description}</p>
-      <p>Surise: {sys.sunrise}</p>
-      <p>Sunset: {sys.sunset}</p>
-
-      <img src={`${iconUrl}${desc.icon}.png`} alt='icon' />
+      <p>Feels like: {Math.round(current.feelslike_f)} &#8457;</p>
+      <p>Humidity: {current.humidity}%</p>
+      {forecast.map((data) => (
+        <div className='forecast'>
+          <p>{data.date}</p>
+          <img src={data.day.condition.icon} alt='icon' />
+          <p>Description: {data.day.condition.text}</p>
+          <p>High: {data.day.maxtemp_f}</p>
+          <p>Low: {data.day.mintemp_f}</p>
+          <p>Chance of rain: {data.day.daily_chance_of_rain}%</p>
+          <p>Precipitation: {data.day.totalprecip_in} in</p>
+        </div>
+      ))}
     </div>
   );
 }
