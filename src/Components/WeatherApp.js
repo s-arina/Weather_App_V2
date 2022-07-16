@@ -11,18 +11,17 @@ function WeatherApp() {
 
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
-  const [data, setData] = useState([]);
-
+  const [weatherData, setWeatherData] = useState([]);
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // setInterval(function () {
-    //   fetchData();
+    //   fetchweatherData();
     //   setDate(new Date());
     // }, 60 * 1000);
 
-    const fetchData = async () => {
+    const fetchWeatherData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
@@ -31,25 +30,25 @@ function WeatherApp() {
         const { data } = await axios.get(
           `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
         );
-        setData(data);
+        setWeatherData(data);
       } catch (err) {
-        console.log(err.message || 'Error: Could not retrieve data.');
+        console.log(err.message || 'Error: Could not retrieve weatherData.');
       } finally {
         setLoading(false);
       }
     };
-    fetchData();
+    fetchWeatherData();
     setDate(new Date());
   }, [lat, long]);
-
-  console.log(data);
 
   return (
     <div className='weather-app'>
       <DateTime date={date} />
-      {loading && <h1>Getting data...</h1>}
+      {loading && <h1>Getting Data...</h1>}
 
-      {data?.current && data?.location ? <Weather weatherData={data} /> : null}
+      {weatherData?.current && weatherData?.location ? (
+        <Weather weatherData={weatherData} />
+      ) : null}
     </div>
   );
 }
