@@ -8,7 +8,7 @@ function Weather({ weatherData }) {
   const location = weatherData.location;
 
   return (
-    <div>
+    <div className='weather-cards'>
       <Current current={current} forecast={forecast} location={location} />
       <Forecast forecast={forecast} />
     </div>

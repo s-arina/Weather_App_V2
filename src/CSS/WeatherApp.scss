@@ -1,0 +1,42 @@
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  color: var(--slate);
+  .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .weather-cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 3rem;
+    // border: 1px solid blue;
+    margin-top: 10%;
+    min-height: 30rem;
+  }
+  .current,
+  .forecast {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: white;
+    width: 30rem;
+    position: relative;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    .current-main {
+      padding: 2rem;
+      flex: 1;
+    }
+    .current-info {
+      padding: 2rem;
+      background-color: lightpink;
+      width: 100%;
+      border-radius: 0 0 1rem 1rem;
+    }
+  }
+}

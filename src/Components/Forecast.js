@@ -2,8 +2,6 @@ import React from 'react';
 import { getWeekday, formatDate } from './DateFns';
 
 function Forecast({ forecast }) {
-  // info for the next two days
-
   return (
     <>
       {forecast.slice(1).map((data) => (

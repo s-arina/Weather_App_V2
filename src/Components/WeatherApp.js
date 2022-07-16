@@ -2,7 +2,7 @@ import '../css/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Weather from './Weather';
-import DateTime from './DateTime';
+import DateLocation from './DateLocation';
 
 function WeatherApp() {
   const key = process.env.REACT_APP_WEATHER_API;
@@ -43,7 +43,7 @@ function WeatherApp() {
 
   return (
     <div className='weather-app'>
-      <DateTime date={date} />
+      <DateLocation date={date} weatherData={weatherData} />
       {loading && <h1>Getting Data...</h1>}
 
       {weatherData?.current && weatherData?.location ? (
