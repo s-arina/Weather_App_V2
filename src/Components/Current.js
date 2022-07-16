@@ -1,19 +1,27 @@
 import React from 'react';
+import { getWeekday, formatDate } from './DateFns';
 
 function Current({ current, forecast, location }) {
+  const today = forecast[0];
+
   // feelsLike should only appear if the date === new Date();
   // leftmost should always be the current
 
-  const today = forecast[0];
-  console.log(today);
   return (
     <div className='today'>
       <h1>
         {location.name}, {location.region}
       </h1>
       <img src={current.condition.icon} alt='icon' />
-      <p>{today.date}</p>
-      <p>Feels like: {Math.round(current.feelslike_f)} &#8457;</p>
+      <p>{formatDate(today.date)}</p>
+      <p>Day of the week: {getWeekday(today.date)}</p>
+      <p>
+        Feels like:{' '}
+        {today.date === new Date().toISOString().split('T')[0]
+          ? Math.round(current.feelslike_f)
+          : null}{' '}
+        &#8457;
+      </p>
       <p>Description: {current.condition.text} &#8457;</p>
       <p>High: {Math.round(today.day.maxtemp_f)} &#8457;</p>
       <p>Low: {Math.round(today.day.mintemp_f)} &#8457;</p>

@@ -1,15 +1,18 @@
 import React from 'react';
+import { getWeekday, formatDate } from './DateFns';
 
 function Forecast({ forecast }) {
   // info for the next two days
+
   return (
     <>
       {forecast.slice(1).map((data) => (
-        <div className='forecast'>
+        <div className='forecast' key={data.date_epoch}>
           <br />
           <br />
           <img src={data.day.condition.icon} alt='icon' />
-          <p>{data.date}</p>
+          <p>Day of the week: {getWeekday(data.date)}</p>
+          <p>{formatDate(data.date)}</p>
           <p>Description: {data.day.condition.text}</p>
           <p>High: {Math.round(data.day.maxtemp_f)} &#8457;</p>
           <p>Low: {Math.round(data.day.mintemp_f)} &#8457;</p>
