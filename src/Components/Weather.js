@@ -9,8 +9,10 @@ function Weather({ weatherData }) {
 
   return (
     <div className='weather-cards'>
-      <Current current={current} forecast={forecast} location={location} />
-      {/* <Forecast forecast={forecast} /> */}
+      <div className='current'>
+        <Current current={current} forecast={forecast} location={location} />
+        {/* <Forecast forecast={forecast} /> */}
+      </div>
     </div>
   );
 }

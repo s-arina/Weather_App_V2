@@ -1,0 +1,156 @@
+.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7addf6), color-stop(#f4cfa1), to(#ffb2b0));
+  background: linear-gradient(#7addf6, #f4cfa1, #ffb2b0);
+  color: white;
+  width: 35rem;
+  height: 55rem;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.current .current-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+}
+
+.current .current-main .current-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.current .current-main .current-temp h1 {
+  font-size: var(--h1);
+}
+
+.current .current-main .current-temp h2 {
+  font-size: var(--h2);
+}
+
+.current .current-main .current-temp h3 {
+  font-size: var(--h3);
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+.current .current-main .dates-precip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+.current .current-main .dates-precip .dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.current .current-main .dates-precip .day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 6rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.current .current-main .dates-precip .day:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.current .current-main .dates-precip .day h3 {
+  font-size: var(--h3);
+  line-height: 1.5em;
+}
+
+.current .current-main .dates-precip .day.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.current .current-main .dates-precip .precip-wind {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.current .current-main .dates-precip .precip-wind .precip,
+.current .current-main .dates-precip .precip-wind .wind {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.current .current-main .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.current img {
+  width: 5rem;
+}
+/*# sourceMappingURL=Current.css.map */
