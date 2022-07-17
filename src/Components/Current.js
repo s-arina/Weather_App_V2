@@ -5,32 +5,46 @@ import Tabs from './Tabs';
 import '../css/Current.css';
 
 function Current({ current, forecast, location }) {
+  // current is only being used for todays temp
   const today = forecast[0];
+  const [chosenDateInfo, setChosenDateInfo] = useState(today);
   const [chooseDate, setChooseDate] = useState(false);
-  const [isToday, setIsToday] = useState(today.date);
+  const [isToday, setIsToday] = useState(chosenDateInfo.date); // current day is highlighted on initial render
 
   function handleClick(date) {
+    for (const day in forecast) {
+      const forecastDay = forecast[day].date;
+      if (date === forecastDay) {
+        setChosenDateInfo(forecast[day]);
+      }
+    }
     setChooseDate(date);
     setIsToday('');
   }
-  //   console.log(today.date, new Date().toISOString().split('T')[0]);
-  //   console.log(today);
 
   return (
     <div className='current-main'>
       <div className='current-date'>
         <h1>
-          {formatDate(today.date)} &#8226; {getWeekday(today.date)}
+          {formatDate(chosenDateInfo.date)} &#8226;{' '}
+          {getWeekday(chosenDateInfo.date)}
         </h1>
       </div>
       <div className='current-temp'>
-        <img src={current.condition.icon} alt='icon' />
-        <h1>{Math.round(current.feelslike_f)}&#176;</h1>
+        <img src={chosenDateInfo.day.condition.icon} alt='icon' />
+
+        {/* only show this if the date is today */}
+        {today.date === chosenDateInfo.date ? (
+          <h1>{Math.round(current.feelslike_f)}&#176;</h1>
+        ) : (
+          <h1>{Math.round(chosenDateInfo.day.maxtemp_f)}&#176;</h1>
+        )}
+
         <h2>
-          {Math.round(today.day.maxtemp_f)}&#176; /&nbsp;&nbsp;
-          {Math.round(today.day.mintemp_f)}&#176;
+          {Math.round(chosenDateInfo.day.maxtemp_f)}&#176; /&nbsp;&nbsp;
+          {Math.round(chosenDateInfo.day.mintemp_f)}&#176;
         </h2>
-        <h3>{current.condition.text}</h3>
+        <h3>{chosenDateInfo.day.condition.text}</h3>
       </div>
       <div className='dates-precip'>
         <div className='dates'>
@@ -52,11 +66,11 @@ function Current({ current, forecast, location }) {
         <div className='precip-wind'>
           <div className='precip'>
             {raindropIcon}
-            <h3>{today.day.daily_chance_of_rain}%</h3>
+            <h3>{chosenDateInfo.day.daily_chance_of_rain}%</h3>
           </div>
           <div className='wind'>
             {windIcon}
-            <h3>{today.day.maxwind_mph} mph</h3>
+            <h3>{chosenDateInfo.day.maxwind_mph} mph</h3>
           </div>
         </div>
       </div>
