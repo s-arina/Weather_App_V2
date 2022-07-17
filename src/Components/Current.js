@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getWeekday, formatDate } from './DateFns';
 import { raindropIcon, windIcon } from './Icons';
 import Tabs from './Tabs';
@@ -6,7 +6,13 @@ import '../css/Current.css';
 
 function Current({ current, forecast, location }) {
   const today = forecast[0];
+  const [chooseDate, setChooseDate] = useState(false);
+  const [isToday, setIsToday] = useState(today.date);
 
+  function handleClick(date) {
+    setChooseDate(date);
+    setIsToday('');
+  }
   //   console.log(today.date, new Date().toISOString().split('T')[0]);
   //   console.log(today);
 
@@ -30,7 +36,12 @@ function Current({ current, forecast, location }) {
         <div className='dates'>
           {forecast.map((date) => (
             <div
-              className={`${date.date === today.date ? 'day active' : 'day'}`}
+              className={`${
+                isToday === date.date || chooseDate === date.date
+                  ? 'day active'
+                  : 'day'
+              }`}
+              onClick={() => handleClick(date.date)}
             >
               <h3>{getWeekday(date.date).slice(0, 3).toUpperCase()}</h3>
               <h3>{Math.round(date.day.maxtemp_f)}&#176;</h3>
