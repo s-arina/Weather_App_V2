@@ -15,14 +15,25 @@ function Weather({ weatherData }) {
 
   return (
     <div className='weather-cards'>
-      <div className='card'>
+      <div
+        className={`card ${
+          card === 'current'
+            ? 'current'
+            : card === 'sun'
+            ? 'sun'
+            : card === 'moon'
+            ? 'moon'
+            : ''
+        }`}
+      >
         <Current
           current={current}
           forecast={forecast}
           location={location}
           card={card}
         />
-
+        {/* - make an array and map out
+         */}
         <div className='tabs'>
           <span
             className={`tab ${card === 'current' ? '' : 'inactive'}`}

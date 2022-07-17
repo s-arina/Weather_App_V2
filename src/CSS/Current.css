@@ -18,6 +18,21 @@
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card.current {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #74c5d9), color-stop(70%, #f1d2ad), color-stop(80%, #ffc7c7));
+  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
+}
+
+.card.moon {
+  background: -webkit-gradient(linear, left top, left bottom, from(#010013), color-stop(#191c44), to(#605a82));
+  background: linear-gradient(#010013, #191c44, #605a82);
+}
+
+.card.sun {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #00b2bf), color-stop(70%, #ffd044), color-stop(80%, #a32a3a));
+  background: linear-gradient(#00b2bf 40%, #ffd044 70%, #a32a3a 80%);
+}
+
 .card .current-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,9 +56,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin-top: 15%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -150,6 +163,22 @@
           justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
+  opacity: 100%;
+}
+
+.card .tabs .tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  width: 4.5rem;
+  -webkit-box-shadow: 0px 0px 5px #fff;
+          box-shadow: 0px 0px 5px #fff;
+  border-radius: 2rem;
 }
 
 .card .tabs .tab:hover {
@@ -157,6 +186,8 @@
 }
 
 .card .tabs .tab.inactive {
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
   opacity: 50%;
 }
 

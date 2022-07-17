@@ -1,6 +1,8 @@
 import React from 'react';
+import '../css/Moon.css';
 
 function Moon({ chosenDateInfo }) {
+  // change moon shape depending on phase, check API
   const astro = chosenDateInfo.astro;
   const day = chosenDateInfo.day;
   console.log(chosenDateInfo);
