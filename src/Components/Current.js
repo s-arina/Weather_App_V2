@@ -26,7 +26,6 @@ function Current({ current, forecast, location, card }) {
     setIsToday('');
   }
 
-  console.log(card);
   return (
     <div className='current-main'>
       <div className='current-date'>
@@ -62,10 +61,10 @@ function Current({ current, forecast, location, card }) {
             <div className='dates'>
               {forecast.map((date) => (
                 <div
-                  className={`${
+                  className={`day ${
                     isToday === date.date || chooseDate === date.date
-                      ? 'day active'
-                      : 'day'
+                      ? 'active'
+                      : ''
                   }`}
                   onClick={() => handleClick(date.date)}
                 >
@@ -88,18 +87,10 @@ function Current({ current, forecast, location, card }) {
           </div>
         </>
       ) : card === 'sun' ? (
-        <Sun />
+        <Sun chosenDateInfo={chosenDateInfo} />
       ) : card === 'moon' ? (
-        <Moon />
+        <Moon chosenDateInfo={chosenDateInfo} />
       ) : null}
-
-      {/* <div className='current-info'>
-        <p>Sunrise: {today.astro.sunrise}</p>
-        <p>Sunset: {today.astro.sunset}</p>
-        <p>Moonrise: {today.astro.moonrise}</p>
-        <p>Moonset: {today.astro.moonset}</p>
-        <p>Moon phase: {today.astro.moon_phase}</p>
-      </div> */}
     </div>
   );
 }

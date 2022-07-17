@@ -24,13 +24,22 @@ function Weather({ weatherData }) {
         />
 
         <div className='tabs'>
-          <span className='tab active' onClick={() => onClick('current')}>
+          <span
+            className={`tab ${card === 'current' ? '' : 'inactive'}`}
+            onClick={() => onClick('current')}
+          >
             {temperatureIcon}
           </span>
-          <span className='tab inactive' onClick={() => onClick('sun')}>
+          <span
+            className={`tab ${card === 'sun' ? '' : 'inactive'}`}
+            onClick={() => onClick('sun')}
+          >
             {sunIcon}
           </span>
-          <span className='tab inactive' onClick={() => onClick('moon')}>
+          <span
+            className={`tab ${card === 'moon' ? '' : 'inactive'}`}
+            onClick={() => onClick('moon')}
+          >
             {moonIcon}
           </span>
         </div>
