@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Sun(props) {
+function Moon(props) {
   return (
     <div className='current-main'>
-      <h1>SUN</h1>
+      <h1>MOON</h1>
     </div>
   );
 }
 
-export default Sun;
+export default Moon;

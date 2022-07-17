@@ -1,4 +1,4 @@
-.current {
+.card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,17 +7,18 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7addf6), color-stop(#f4cfa1), to(#ffb2b0));
-  background: linear-gradient(#7addf6, #f4cfa1, #ffb2b0);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #74c5d9), color-stop(70%, #f1d2ad), color-stop(80%, #ffc7c7));
+  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: white;
   width: 35rem;
   height: 55rem;
+  padding: 2rem;
   position: relative;
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-.current .current-main {
+.card .current-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,11 +30,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
-  padding: 2rem;
   height: 100%;
 }
 
-.current .current-main .current-temp {
+.card .current-main .current-temp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,21 +52,21 @@
           flex: 1;
 }
 
-.current .current-main .current-temp h1 {
+.card .current-main .current-temp h1 {
   font-size: var(--h1);
 }
 
-.current .current-main .current-temp h2 {
+.card .current-main .current-temp h2 {
   font-size: var(--h2);
 }
 
-.current .current-main .current-temp h3 {
+.card .current-main .current-temp h3 {
   font-size: var(--h3);
   margin-top: 1rem;
   letter-spacing: 1px;
 }
 
-.current .current-main .dates-precip {
+.card .current-main .dates-precip {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,14 +76,14 @@
   gap: 1rem;
 }
 
-.current .current-main .dates-precip .dates {
+.card .current-main .dates-precip .dates {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
-.current .current-main .dates-precip .day {
+.card .current-main .dates-precip .day {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,20 +101,21 @@
   transition: ease 0.5s;
 }
 
-.current .current-main .dates-precip .day:hover {
+.card .current-main .dates-precip .day:hover {
   background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
-.current .current-main .dates-precip .day h3 {
+.card .current-main .dates-precip .day h3 {
   font-size: var(--h3);
   line-height: 1.5em;
 }
 
-.current .current-main .dates-precip .day.active {
+.card .current-main .dates-precip .day.active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.current .current-main .dates-precip .precip-wind {
+.card .current-main .dates-precip .precip-wind {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,10 +124,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1rem;
+  width: 9rem;
 }
 
-.current .current-main .dates-precip .precip-wind .precip,
-.current .current-main .dates-precip .precip-wind .wind {
+.card .current-main .dates-precip .precip-wind .precip,
+.card .current-main .dates-precip .precip-wind .wind {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,7 +141,7 @@
   gap: 0.5rem;
 }
 
-.current .current-main .tabs {
+.card .tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +152,11 @@
   gap: 1rem;
 }
 
-.current img {
+.card .tabs .tab:hover {
+  cursor: pointer;
+}
+
+.card img {
   width: 5rem;
 }
 /*# sourceMappingURL=Current.css.map */
