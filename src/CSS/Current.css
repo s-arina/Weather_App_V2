@@ -27,6 +27,21 @@
   background: -webkit-gradient(linear, left top, left bottom, from(#010013), color-stop(#191c44), to(#605a82));
   background: linear-gradient(#010013, #191c44, #605a82);
   overflow: hidden;
+  position: relative;
+}
+
+.card.moon .stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.card.moon .stars-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .card.sun {
@@ -50,7 +65,7 @@
 .card .current-main .current-date h3 {
   font-size: var(--h3);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .card .current-main .current-temp {

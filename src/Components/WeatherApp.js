@@ -5,6 +5,8 @@ import Weather from './Weather';
 import DateLocation from './DateLocation';
 
 function WeatherApp() {
+  const card = document.getElementsByClassName('current')[0].className;
+  // CLASSNAME UNDEFINED AT INITIAL RENDER
   const key = process.env.REACT_APP_WEATHER_API;
 
   const url = 'http://api.weatherapi.com/v1/';
@@ -42,7 +44,18 @@ function WeatherApp() {
   }, [lat, long]);
 
   return (
-    <div className='weather-app'>
+    <div
+      className={`weather-app ${
+        card === 'card current'
+          ? 'current'
+          : card === 'card sun'
+          ? 'sun'
+          : card === 'card moon'
+          ? 'moon'
+          : ''
+      }`}
+    >
+      {/* <div className='weather-app'> */}
       <DateLocation date={date} weatherData={weatherData} />
       {loading && <h1>Getting Data...</h1>}
 

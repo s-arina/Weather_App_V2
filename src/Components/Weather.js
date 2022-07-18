@@ -26,6 +26,13 @@ function Weather({ weatherData }) {
             : ''
         }`}
       >
+        {card === 'moon' ? (
+          <div className='stars-container'>
+            <span id='stars'></span>
+            <span id='stars2'></span>
+            <span id='stars3'></span>
+          </div>
+        ) : null}
         <Current
           current={current}
           forecast={forecast}

@@ -6,15 +6,10 @@ function Moon({ chosenDateInfo }) {
   // change moon shape depending on phase, check API
   const astro = chosenDateInfo.astro;
   const day = chosenDateInfo.day;
-  console.log(chosenDateInfo);
+  // console.log(chosenDateInfo);
   return (
     <>
       <div className='moon-card'>
-        {/* <div className='stars-container'>
-          <span id='stars'></span>
-          <span id='stars2'></span>
-          <span id='stars3'></span>
-        </div> */}
         <h3>{astro.moon_phase}</h3>
         <div className='moon-img'></div>
 
