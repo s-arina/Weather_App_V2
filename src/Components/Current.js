@@ -29,10 +29,10 @@ function Current({ current, forecast, location, card }) {
   return (
     <div className='current-main'>
       <div className='current-date'>
-        <h1>
+        <h3>
           {formatDate(chosenDateInfo.date)} &#8226;{' '}
           {getWeekday(chosenDateInfo.date)}
-        </h1>
+        </h3>
         {/* <br />
         <h2>
           {location.name}, {location.region}

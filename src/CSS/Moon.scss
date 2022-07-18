@@ -6,6 +6,8 @@
   margin-top: 15%;
   text-transform: uppercase;
   height: 100%;
+  gap: 1rem;
+  position: relative;
   h3 {
     font-size: var(--h3);
     letter-spacing: 2px;
@@ -37,18 +39,31 @@
     }
   }
   .moon-info {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     flex: 1;
-    h3 {
-      margin-bottom: 1rem;
-    }
     .moonrise-set {
       display: flex;
-      gap: 3rem;
+      gap: 5rem;
+    }
+    .moonrise-set,
+    .illum {
+      h3:first-of-type {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          bottom: -5px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+      }
     }
   }
 }
