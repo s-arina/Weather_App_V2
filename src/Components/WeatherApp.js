@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Weather from './Weather';
 import DateLocation from './DateLocation';
+import RequestLocation from './RequestLocation';
 
 function WeatherApp() {
-  const card = document.getElementsByClassName('current')[0].className;
+  // const card = document.getElementsByClassName('current')[0].className;
   // CLASSNAME UNDEFINED AT INITIAL RENDER
   const key = process.env.REACT_APP_WEATHER_API;
 
@@ -16,50 +17,73 @@ function WeatherApp() {
   const [weatherData, setWeatherData] = useState([]);
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(true);
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const [request, setRequest] = useState(false);
+
+  // const updateWidth = () => {
+  //   setWidth(window.innerWidth);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', updateWidth);
+  //   return () => window.removeEventListener('resize', updateWidth);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (width < 500) {
+  //     setRequest(true);
+  //   }
+  // });
 
   useEffect(() => {
     // setInterval(function () {
     //   fetchweatherData();
     //   setDate(new Date());
     // }, 60 * 1000);
+    if (request) {
+      const fetchWeatherData = async () => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          setLat(position.coords.latitude);
+          setLong(position.coords.longitude);
+        });
+        try {
+          const { data } = await axios.get(
+            `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
+          );
+          setWeatherData(data);
+        } catch (err) {
+          console.log(err.message || 'Error: Could not retrieve weatherData.');
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchWeatherData();
+    }
 
-    const fetchWeatherData = async () => {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-      });
-      try {
-        const { data } = await axios.get(
-          `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
-        );
-        setWeatherData(data);
-      } catch (err) {
-        console.log(err.message || 'Error: Could not retrieve weatherData.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchWeatherData();
     setDate(new Date());
-  }, [lat, long]);
+  }, [lat, long, request]);
 
   return (
-    <div
-      className={`weather-app ${
-        card === 'card current'
-          ? 'current'
-          : card === 'card sun'
-          ? 'sun'
-          : card === 'card moon'
-          ? 'moon'
-          : ''
-      }`}
-    >
-      {/* <div className='weather-app'> */}
-      <DateLocation date={date} weatherData={weatherData} />
-      {loading && <h1>Getting Data...</h1>}
+    // <div
+    //   className={`weather-app ${
+    //     card === 'card current'
+    //       ? 'current'
+    //       : card === 'card sun'
+    //       ? 'sun'
+    //       : card === 'card moon'
+    //       ? 'moon'
+    //       : ''
+    //   }`}
+    // >
+    <div className='weather-app'>
+      {!request ? <RequestLocation setRequest={setRequest} /> : null}
+      {/* <DateLocation date={date} weatherData={weatherData} /> */}
 
-      {weatherData?.current && weatherData?.location ? (
+      {/* <div className='loading'>
+        {!request && loading && <h1>Getting Data...</h1>}
+      </div> */}
+
+      {request && weatherData?.current && weatherData?.location ? (
         <Weather weatherData={weatherData} />
       ) : null}
     </div>

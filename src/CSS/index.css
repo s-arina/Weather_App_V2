@@ -17,6 +17,7 @@
 
 html {
   font-size: 10px;
+  min-height: 100vh;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
   font-family: 'Ubuntu';
-
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: var(--slate); */
@@ -39,6 +40,9 @@ a {
   cursor: pointer;
 }
 
-[data-reactroot] {
-  height: 100% !important;
+#root {
+  height: 100%;
 }
+/* [data-reactroot] {
+  height: 100% !important;
+} */

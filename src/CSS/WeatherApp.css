@@ -2,12 +2,35 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 5rem;
   color: var(--slate);
+  height: 100%;
+}
+
+.weather-app .loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px black;
+  border-radius: 1rem;
+  width: 35rem;
+  height: 55rem;
 }
 
 .weather-app.curr {
@@ -46,7 +69,56 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 3rem;
-  margin-top: 5%;
   min-height: 30rem;
+}
+
+.weather-app .request-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightpink;
+  color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.weather-app .request-location button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--offwhite);
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.weather-app .request-location button:hover {
+  color: white;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 10px #fff;
+          box-shadow: 0px 0px 10px #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .weather-app {
+    height: 100%;
+    padding: 0;
+  }
+  .weather-app .weather-cards {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=WeatherApp.css.map */
