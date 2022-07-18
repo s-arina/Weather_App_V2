@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
-
   background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: white;
   width: 35rem;
@@ -22,13 +21,12 @@
   .current-main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     height: 100%;
+    width: 100%;
     .current-temp {
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       margin-top: 15%;
       align-items: center;
       flex: 1;

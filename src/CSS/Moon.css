@@ -1,1 +1,87 @@
-/* No CSS *//*# sourceMappingURL=Moon.css.map */
+.moon-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: 15%;
+  text-transform: uppercase;
+  height: 100%;
+}
+
+.moon-card h3 {
+  font-size: var(--h3);
+  letter-spacing: 2px;
+}
+
+.moon-card .moon-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 100%;
+  position: relative;
+  margin: 5rem 0;
+}
+
+.moon-card .moon-img::before, .moon-card .moon-img::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+  opacity: 50%;
+}
+
+.moon-card .moon-img::after {
+  width: 10rem;
+  height: 10rem;
+  opacity: 30%;
+}
+
+.moon-card .moon-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.moon-card .moon-info h3 {
+  margin-bottom: 1rem;
+}
+
+.moon-card .moon-info .moonrise-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+}
+/*# sourceMappingURL=Moon.css.map */

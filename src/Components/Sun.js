@@ -5,13 +5,11 @@ function Sun({ chosenDateInfo }) {
   const day = chosenDateInfo.day;
 
   return (
-    <div className='current-main'>
-      <div className='sun'>
-        <h1>SUN</h1>
-        <p>Rise: {astro.sunrise}</p>
-        <p>Set: {astro.sunset}</p>
-        <p>Humidity: {day.avghumidity}</p>
-      </div>
+    <div className='sun-card'>
+      <h1>SUN</h1>
+      <p>Rise: {astro.sunrise}</p>
+      <p>Set: {astro.sunset}</p>
+      <p>Humidity: {day.avghumidity}</p>
     </div>
   );
 }

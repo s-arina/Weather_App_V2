@@ -1,0 +1,54 @@
+.moon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 15%;
+  text-transform: uppercase;
+  height: 100%;
+  h3 {
+    font-size: var(--h3);
+    letter-spacing: 2px;
+  }
+  .moon-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    position: relative;
+    margin: 5rem 0;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: white;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 100%;
+      opacity: 50%;
+    }
+    &::after {
+      width: 10rem;
+      height: 10rem;
+      opacity: 30%;
+    }
+  }
+  .moon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    h3 {
+      margin-bottom: 1rem;
+    }
+    .moonrise-set {
+      display: flex;
+      gap: 3rem;
+    }
+  }
+}
