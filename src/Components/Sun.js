@@ -4,7 +4,7 @@ import '../css/Sun.css';
 function Sun({ chosenDateInfo }) {
   const astro = chosenDateInfo.astro;
   const day = chosenDateInfo.day;
-
+  console.log(chosenDateInfo);
   const sunInfo = [
     { id: 0, name: 'Rise', info: astro.sunrise },
     { id: 1, name: 'Set', info: astro.sunset },
@@ -14,9 +14,23 @@ function Sun({ chosenDateInfo }) {
     <>
       <div className='sun-card'>
         <h3>SUN</h3>
-        <div className='sun-img'>
-          <div className='sun-disc'></div>
+        <div className='sun-box'>
+          <div className='ray_box'>
+            <div className='ray tleft'></div>
+            <div className='ray tright'></div>
+            <div className='ray center'></div>
+            <div className='ray bleft'></div>
+            <div className='ray bright'></div>
+            <div className='ray tleftS '></div>
+            <div className='ray trightS'></div>
+            <div className='ray centerS'></div>
+            <div className='ray bleftS'></div>
+            <div className='ray brightS'></div>
+          </div>
         </div>
+        {/* <div className='sun-img'>
+          <div className='sun-disc'></div>
+        </div> */}
         <div className='sun-info-container'>
           {sunInfo?.map((sun) => (
             <div className='sun-info' key={sun.id}>
