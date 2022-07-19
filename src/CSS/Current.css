@@ -53,6 +53,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -99,7 +102,7 @@
   letter-spacing: 1px;
 }
 
-.card .current-main .dates-precip {
+.card .current-main .dates {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,14 +112,7 @@
   gap: 1rem;
 }
 
-.card .current-main .dates-precip .dates {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-}
-
-.card .current-main .dates-precip .day {
+.card .current-main .day {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,28 +123,32 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 6rem;
+  height: 11rem;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
 }
 
-.card .current-main .dates-precip .day:hover {
+.card .current-main .day:hover {
   background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
-.card .current-main .dates-precip .day h3 {
-  font-size: var(--h3);
-  line-height: 1.5em;
+.card .current-main .day h2 {
+  font-size: var(--h2);
+  letter-spacing: 2px;
 }
 
-.card .current-main .dates-precip .day.active {
+.card .current-main .day h2:first-of-type {
+  opacity: 70%;
+}
+
+.card .current-main .day.active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.card .current-main .dates-precip .precip-wind {
+.card .current-main .precip-wind {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,8 +160,8 @@
   width: 9rem;
 }
 
-.card .current-main .dates-precip .precip-wind .precip,
-.card .current-main .dates-precip .precip-wind .wind {
+.card .current-main .precip-wind .precip,
+.card .current-main .precip-wind .wind {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,15 +217,28 @@
 
 @media screen and (max-width: 600px) {
   .card.current, .card.sun, .card.moon {
-    padding: 4rem;
+    padding: 5rem;
     width: 100%;
     height: 100%;
     border-radius: 0;
   }
+  .card img {
+    width: 7rem;
+  }
   .card .current-main .current-temp {
+    margin-top: 20%;
     -webkit-box-flex: 0;
         -ms-flex: 0;
             flex: 0;
+  }
+  .card .current-main .current-date h2 {
+    font-size: var(--h2);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+  .card .current-main .current-date h3 {
+    opacity: 70%;
   }
 }
 /*# sourceMappingURL=Current.css.map */

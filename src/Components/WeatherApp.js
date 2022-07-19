@@ -20,20 +20,23 @@ function WeatherApp() {
   const [width, setWidth] = React.useState(window.innerWidth);
   const [request, setRequest] = useState(false);
 
-  // const updateWidth = () => {
-  //   setWidth(window.innerWidth);
-  // };
+  const success = function (position) {
+    alert(position.coords.latitude);
+    alert(position.coords.longitude);
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener('resize', updateWidth);
-  //   return () => window.removeEventListener('resize', updateWidth);
-  // }, []);
+  const error = function (errorObj) {
+    alert(errorObj.code + ': ' + errorObj.message);
 
-  // useEffect(() => {
-  //   if (width < 500) {
-  //     setRequest(true);
-  //   }
-  // });
+    alert('error!!');
+  };
+
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(success, error, {
+      enableHighAccuracy: true,
+      maximumAge: 10000,
+    });
+  }
 
   useEffect(() => {
     // setInterval(function () {
@@ -76,6 +79,7 @@ function WeatherApp() {
     //   }`}
     // >
     <div className='weather-app'>
+      {/* <button onClick={() => getLocation()}>Get location</button> */}
       {!request ? <RequestLocation setRequest={setRequest} /> : null}
       {/* <DateLocation date={date} weatherData={weatherData} /> */}
 
