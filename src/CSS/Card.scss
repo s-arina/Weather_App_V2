@@ -29,7 +29,6 @@
   }
   &.sun {
     background: linear-gradient(#f64174 40%, #ff5811, #ffb700);
-    // background: linear-gradient(#00b2bf 40%, #ffd044 70%, #a32a3a 80%);
   }
   .current-main {
     display: flex;
@@ -43,6 +42,7 @@
         font-size: var(--h2);
         text-transform: uppercase;
         letter-spacing: 3px;
+        line-height: 1.5em;
         margin-bottom: 1rem;
       }
       h3 {
@@ -81,8 +81,8 @@
     }
     .dates {
       display: flex;
-      justify-content: space-between;
-      gap: 1rem;
+      margin: 0 auto;
+      gap: 5rem;
       .day {
         display: flex;
         flex-direction: column;
@@ -113,15 +113,16 @@
     }
     .precip-wind {
       display: flex;
-      justify-content: space-between;
+      margin: 0 auto;
+      gap: 5rem;
       .precip,
       .wind {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 1rem;
-        h2 {
-          font-size: var(--h2);
+        h3 {
+          font-size: var(--h3);
           letter-spacing: 1px;
         }
       }
@@ -159,14 +160,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  .card {
-    &.current,
-    &.sun,
-    &.moon {
-      width: 100%;
-      height: 100%;
-      border-radius: 0;
-    }
+  .card .current-main .dates {
+    justify-content: space-between;
+    margin: 0;
+    gap: 0;
   }
 }
 

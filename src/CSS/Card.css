@@ -66,6 +66,7 @@
   font-size: var(--h2);
   text-transform: uppercase;
   letter-spacing: 3px;
+  line-height: 1.5em;
   margin-bottom: 1rem;
 }
 
@@ -121,10 +122,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 1rem;
+  margin: 0 auto;
+  gap: 5rem;
 }
 
 .card .current-main .dates .day {
@@ -172,9 +171,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: 0 auto;
+  gap: 5rem;
 }
 
 .card .current-main .precip-wind .precip,
@@ -191,9 +189,9 @@
   gap: 1rem;
 }
 
-.card .current-main .precip-wind .precip h2,
-.card .current-main .precip-wind .wind h2 {
-  font-size: var(--h2);
+.card .current-main .precip-wind .precip h3,
+.card .current-main .precip-wind .wind h3 {
+  font-size: var(--h3);
   letter-spacing: 1px;
 }
 
@@ -240,10 +238,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  .card.current, .card.sun, .card.moon {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
+  .card .current-main .dates {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0;
+    gap: 0;
   }
 }
 

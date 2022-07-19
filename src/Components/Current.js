@@ -59,11 +59,11 @@ function Current({ current, forecast, location, card }) {
           <div className='precip-wind'>
             <div className='precip'>
               {raindropIcon}
-              <h2>{chosenDateInfo.day.daily_chance_of_rain}%</h2>
+              <h3>{chosenDateInfo.day.daily_chance_of_rain}%</h3>
             </div>
             <div className='wind'>
               {windIcon}
-              <h2>{chosenDateInfo.day.maxwind_mph} mph</h2>
+              <h3>{chosenDateInfo.day.maxwind_mph} mph</h3>
             </div>
           </div>
           <div className='dates'>
