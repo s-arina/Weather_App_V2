@@ -2,11 +2,11 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 
 export const raindropIcon = (
-  <Icon icon='uil:raindrops' color='white' width='25' height='25' />
+  <Icon icon='uil:raindrops' color='white' width='35' height='35' />
 );
 
 export const windIcon = (
-  <Icon icon='bx:wind' color='white' width='25' height='25' />
+  <Icon icon='bx:wind' color='white' width='35' height='35' />
 );
 
 export const temperatureIcon = (

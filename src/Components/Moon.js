@@ -6,7 +6,7 @@ function Moon({ chosenDateInfo }) {
   // change moon shape depending on phase, check API
   const astro = chosenDateInfo.astro;
   const day = chosenDateInfo.day;
-  // console.log(chosenDateInfo);
+
   return (
     <>
       <div className='moon-card'>

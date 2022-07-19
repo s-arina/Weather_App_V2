@@ -67,17 +67,6 @@ function WeatherApp() {
   }, [lat, long, request]);
 
   return (
-    // <div
-    //   className={`weather-app ${
-    //     card === 'card current'
-    //       ? 'current'
-    //       : card === 'card sun'
-    //       ? 'sun'
-    //       : card === 'card moon'
-    //       ? 'moon'
-    //       : ''
-    //   }`}
-    // >
     <div className='weather-app'>
       {/* <button onClick={() => getLocation()}>Get location</button> */}
       {!request ? <RequestLocation setRequest={setRequest} /> : null}

@@ -13,6 +13,12 @@ function Weather({ weatherData }) {
     setCard(name);
   }
 
+  const tabs = [
+    { id: 0, class: 'current', icon: temperatureIcon },
+    { id: 1, class: 'sun', icon: sunIcon },
+    { id: 2, class: 'moon', icon: moonIcon },
+  ];
+
   return (
     <div className='weather-cards'>
       <div
@@ -39,27 +45,16 @@ function Weather({ weatherData }) {
           location={location}
           card={card}
         />
-        {/* - make an array and map out
-         */}
         <div className='tabs'>
-          <span
-            className={`tab ${card === 'current' ? '' : 'inactive'}`}
-            onClick={() => onClick('current')}
-          >
-            {temperatureIcon}
-          </span>
-          <span
-            className={`tab ${card === 'sun' ? '' : 'inactive'}`}
-            onClick={() => onClick('sun')}
-          >
-            {sunIcon}
-          </span>
-          <span
-            className={`tab ${card === 'moon' ? '' : 'inactive'}`}
-            onClick={() => onClick('moon')}
-          >
-            {moonIcon}
-          </span>
+          {tabs?.map((tab) => (
+            <span
+              key={tab.id}
+              className={`tab ${card === tab.class ? '' : 'inactive'}`}
+              onClick={() => onClick(tab.class)}
+            >
+              {tab.icon}
+            </span>
+          ))}
         </div>
       </div>
     </div>
