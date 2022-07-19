@@ -42,8 +42,8 @@
 }
 
 .card.sun {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #00b2bf), color-stop(70%, #ffd044), color-stop(80%, #a32a3a));
-  background: linear-gradient(#00b2bf 40%, #ffd044 70%, #a32a3a 80%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #f64174), color-stop(#ff5811), to(#ffb700));
+  background: linear-gradient(#f64174 40%, #ff5811, #ffb700);
 }
 
 .card .current-main {

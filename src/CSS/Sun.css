@@ -1,4 +1,4 @@
-.moon-card {
+.sun-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,17 +18,17 @@
   position: relative;
 }
 
-.moon-card h2 {
+.sun-card h2 {
   font-size: var(--h2);
   letter-spacing: 3px;
 }
 
-.moon-card h3 {
+.sun-card h3 {
   font-size: var(--h3);
   letter-spacing: 3px;
 }
 
-.moon-card .moon-info-container {
+.sun-card .sun-info-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +39,7 @@
   gap: 5rem;
 }
 
-.moon-card .moon-info-container .moon-info {
+.sun-card .sun-info-container .sun-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,16 +49,16 @@
   gap: 10rem;
 }
 
-.moon-card .moon-info-container .moon-info h3:nth-of-type(2) {
+.sun-card .sun-info-container .sun-info h3:nth-of-type(2) {
   opacity: 70%;
 }
 
-.moon-img {
+.sun-img {
   width: 10rem;
   height: 10rem;
-  border: 2px solid var(--white);
-  -webkit-box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
-          box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  -webkit-box-shadow: 0px 0px 50px white;
+          box-shadow: 0px 0px 50px white;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -67,29 +67,25 @@
           transform: translateZ(0);
 }
 
-.moon-img::before {
+.sun-img::before {
   content: ' ';
   display: block;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--slate);
+  background-color: white;
   width: 50%;
   height: 100%;
-  -webkit-animation: flip 2s 1s steps(2) infinite alternate;
-          animation: flip 2s 1s steps(2) infinite alternate;
 }
 
-.moon-disc {
+.sun-disc {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   width: 100%;
   height: 100%;
-  -webkit-animation: rotate 4s linear infinite;
-          animation: rotate 4s linear infinite;
 }
 
-.moon-disc::before, .moon-disc::after {
+.sun-disc::before, .sun-disc::after {
   content: ' ';
   display: block;
   -webkit-transform-style: preserve-3d;
@@ -106,11 +102,11 @@
           backface-visibility: hidden;
 }
 
-.moon-disc::before {
-  background-color: var(--slate);
+.sun-disc::before {
+  background-color: white;
 }
 
-.moon-disc::after {
+.sun-disc::after {
   background-color: var(--white);
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -155,4 +151,4 @@
     left: 100%;
   }
 }
-/*# sourceMappingURL=Moon.css.map */
+/*# sourceMappingURL=Sun.css.map */

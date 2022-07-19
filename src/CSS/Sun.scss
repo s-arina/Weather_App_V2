@@ -1,4 +1,4 @@
-.moon-card {
+.sun-card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,12 +15,12 @@
     font-size: var(--h3);
     letter-spacing: 3px;
   }
-  .moon-info-container {
+  .sun-info-container {
     display: flex;
     flex-direction: column;
     gap: 5rem;
 
-    .moon-info {
+    .sun-info {
       display: flex;
       justify-content: space-between;
       gap: 10rem;
@@ -31,11 +31,11 @@
   }
 }
 
-.moon-img {
+.sun-img {
   width: 10rem;
   height: 10rem;
-  border: 2px solid var(--white);
-  box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  box-shadow: 0px 0px 50px rgb(255, 255, 255);
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -48,18 +48,19 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--slate);
+    background-color: white;
     width: 50%;
     height: 100%;
-    animation: flip 2s 1s steps(2) infinite alternate;
+    // animation: flip 2s 1s steps(2) infinite alternate;
+    // animation: rotate(360deg);
   }
 }
 
-.moon-disc {
+.sun-disc {
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
-  animation: rotate 4s linear infinite;
+  //   animation: rotate 4s linear infinite;
 
   &::before,
   &::after {
@@ -74,7 +75,7 @@
     backface-visibility: hidden;
   }
   &::before {
-    background-color: var(--slate);
+    background-color: white;
   }
   &::after {
     background-color: var(--white);
