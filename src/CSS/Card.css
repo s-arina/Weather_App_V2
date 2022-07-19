@@ -8,11 +8,12 @@
           flex-direction: column;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #74c5d9), color-stop(70%, #f1d2ad), color-stop(80%, #ffc7c7));
   background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
-  color: white;
+  color: var(--white);
   width: 100vw;
   height: 100vh;
   padding: 5rem;
   position: relative;
+  overflow: hidden;
 }
 
 .card.current {
@@ -23,7 +24,6 @@
 .card.moon {
   background: -webkit-gradient(linear, left top, left bottom, from(#010013), color-stop(#191c44), to(#605a82));
   background: linear-gradient(#010013, #191c44, #605a82);
-  overflow: hidden;
   position: relative;
 }
 
@@ -127,7 +127,7 @@
   gap: 1rem;
 }
 
-.card .current-main .day {
+.card .current-main .dates .day {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,28 +143,28 @@
   padding: 2rem;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
-}
-
-.card .current-main .day:hover {
-  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
-.card .current-main .day h2 {
+.card .current-main .dates .day h2 {
   font-size: var(--h2);
   letter-spacing: 2px;
 }
 
-.card .current-main .day h2:first-of-type {
+.card .current-main .dates .day h2:first-of-type {
   opacity: 70%;
 }
 
-.card .current-main .day h3 {
+.card .current-main .dates .day h3 {
   font-size: var(--h3);
   letter-spacing: 2px;
 }
 
-.card .current-main .day.active {
+.card .current-main .dates .day:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.card .current-main .dates .day.active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -206,7 +206,6 @@
           justify-content: center;
   margin-top: 5rem;
   gap: 2rem;
-  opacity: 100%;
 }
 
 .card .tabs .tab {
@@ -219,16 +218,21 @@
   text-align: center;
   padding: 0.5rem;
   width: 4.5rem;
-  -webkit-box-shadow: 0px 0px 5px white;
-          box-shadow: 0px 0px 5px white;
+  -webkit-box-shadow: 0px 0px 5px var(--white);
+          box-shadow: 0px 0px 5px var(--white);
   border-radius: 2rem;
+  opacity: 100%;
   cursor: pointer;
 }
 
 .card .tabs .tab.inactive {
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
   opacity: 70%;
+}
+
+.card .tabs .tab.inactive:hover {
+  opacity: 100%;
 }
 
 .card img {

@@ -43,42 +43,43 @@ function WeatherApp() {
     //   fetchweatherData();
     //   setDate(new Date());
     // }, 60 * 1000);
-    if (request) {
-      const fetchWeatherData = async () => {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          setLat(position.coords.latitude);
-          setLong(position.coords.longitude);
-        });
-        try {
-          const { data } = await axios.get(
-            `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
-          );
-          setWeatherData(data);
-        } catch (err) {
-          console.log(err.message || 'Error: Could not retrieve weatherData.');
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchWeatherData();
-    }
 
+    const fetchWeatherData = async () => {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setLat(position.coords.latitude);
+        setLong(position.coords.longitude);
+      });
+      try {
+        const { data } = await axios.get(
+          `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
+        );
+        setWeatherData(data);
+      } catch (err) {
+        console.log(err.message || 'Error: Could not retrieve weatherData.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchWeatherData();
     setDate(new Date());
-  }, [lat, long, request]);
+  }, [lat, long]);
 
   return (
     <div className='weather-app'>
       {/* <button onClick={() => getLocation()}>Get location</button> */}
-      {!request ? <RequestLocation setRequest={setRequest} /> : null}
+      {/* {!request ? <RequestLocation setRequest={setRequest} /> : null} */}
       {/* <DateLocation date={date} weatherData={weatherData} /> */}
 
       {/* <div className='loading'>
         {!request && loading && <h1>Getting Data...</h1>}
       </div> */}
 
-      {request && weatherData?.current && weatherData?.location ? (
+      {weatherData?.current && weatherData?.location ? (
         <Weather weatherData={weatherData} />
       ) : null}
+      {/* {request && weatherData?.current && weatherData?.location ? (
+        <Weather weatherData={weatherData} />
+      ) : null} */}
     </div>
   );
 }

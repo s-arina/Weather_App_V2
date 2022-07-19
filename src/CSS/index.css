@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 :root {
+  --white: #fff;
   --offwhite: #f2f2f2;
+  --black: #000;
   --slate: #2a2a2a;
   --h1: 13em;
   --h2: 2.4em;
@@ -17,18 +19,15 @@
 
 html {
   font-size: 10px;
-  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 body {
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
   height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: var(--slate); */
 }
 
 code {
@@ -43,6 +42,7 @@ a {
 #root {
   height: 100%;
 }
+
 /* [data-reactroot] {
   height: 100% !important;
 } */

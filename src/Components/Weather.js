@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Current from './Current';
 import { temperatureIcon, sunIcon, moonIcon } from './Icons';
+import '../css/Stars.css';
 
 function Weather({ weatherData }) {
   const current = weatherData.current;

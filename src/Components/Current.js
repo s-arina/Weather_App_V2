@@ -4,6 +4,7 @@ import { raindropIcon, windIcon } from './Icons';
 import Sun from './Sun';
 import Moon from './Moon';
 import '../css/Card.css';
+import '../css/Stars.css';
 
 function Current({ current, forecast, location, card }) {
   // current is only being used for todays temp
@@ -73,6 +74,7 @@ function Current({ current, forecast, location, card }) {
                     ? 'active'
                     : ''
                 }`}
+                key={date.date}
                 onClick={() => handleClick(date.date)}
               >
                 <h3>{getWeekday(date.date).slice(0, 3).toUpperCase()}</h3>

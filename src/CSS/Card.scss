@@ -2,17 +2,17 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
-  color: white;
+  color: var(--white);
   width: 100vw;
   height: 100vh;
   padding: 5rem;
   position: relative;
+  overflow: hidden;
   &.current {
     background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   }
   &.moon {
     background: linear-gradient(#010013, #191c44, #605a82);
-    overflow: hidden;
     position: relative;
     .stars-container {
       position: absolute;
@@ -82,38 +82,37 @@
       display: flex;
       justify-content: space-between;
       gap: 1rem;
-    }
-    .day {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 12rem;
-      border-radius: 1rem;
-      padding: 2rem;
-      transition: ease 0.5s;
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.3);
+      .day {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 12rem;
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: ease 0.5s;
         cursor: pointer;
-      }
-      h2 {
-        font-size: var(--h2);
-        letter-spacing: 2px;
-        &:first-of-type {
-          opacity: 70%;
+        h2 {
+          font-size: var(--h2);
+          letter-spacing: 2px;
+          &:first-of-type {
+            opacity: 70%;
+          }
         }
-      }
-      h3 {
-        font-size: var(--h3);
-        letter-spacing: 2px;
-      }
-      &.active {
-        background-color: rgba(255, 255, 255, 0.3);
+        h3 {
+          font-size: var(--h3);
+          letter-spacing: 2px;
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+        &.active {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
       }
     }
     .precip-wind {
       display: flex;
       justify-content: space-between;
-
       .precip,
       .wind {
         display: flex;
@@ -132,19 +131,23 @@
     justify-content: center;
     margin-top: 5rem;
     gap: 2rem;
-    opacity: 100%;
+
     .tab {
       display: flex;
       justify-content: center;
       text-align: center;
       padding: 0.5rem;
       width: 4.5rem;
-      box-shadow: 0px 0px 5px white;
+      box-shadow: 0px 0px 5px var(--white);
       border-radius: 2rem;
+      opacity: 100%;
       cursor: pointer;
       &.inactive {
-        transition: ease 0.5s;
+        transition: ease 0.3s;
         opacity: 70%;
+        &:hover {
+          opacity: 100%;
+        }
       }
     }
   }
