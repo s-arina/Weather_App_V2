@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@font-face {
+  font-family: 'Ubuntu-M';
+  src: url('/public/Ubuntu-M.ttf');
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  font-family: 'Ubuntu-M', sans-serif;
 }
 
 html {
@@ -14,10 +18,7 @@ html {
 body {
   overflow-x: hidden;
   position: relative;
-  font-family: 'Ubuntu', sans-serif;
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(#555297, #ec7173);
 }
 
