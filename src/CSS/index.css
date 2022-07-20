@@ -28,7 +28,9 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: midnightblue;
+  /* background-color: midnightblue; */
+  /* background: linear-gradient(#d27c8a, #7a5a6b, #393c95, #262156); */
+  background: linear-gradient(#555297, #ec7173);
 }
 
 code {

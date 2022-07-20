@@ -13,7 +13,7 @@ function Sun({ chosenDateInfo }) {
   return (
     <>
       <div className='sun-card'>
-        <h3>UV Level: {day.uv}</h3>
+        <h3>UV Index: {day.uv}</h3>
         <div className='sun-box'>
           <div className='ray-box'>
             <div className='ray tleft'></div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Current from './Current';
 import { temperatureIcon, sunIcon, moonIcon, myInfo } from './Icons';
+import Info from './Info';
 import '../css/Stars.css';
 
 function WeatherCards({ weatherData }) {
@@ -9,16 +10,19 @@ function WeatherCards({ weatherData }) {
   const location = weatherData.location;
 
   const [card, setCard] = useState('current');
+  const [showInfo, setShowInfo] = useState(false);
 
   function onClick(name) {
     setCard(name);
+    if (card !== name) {
+      setShowInfo(false);
+    }
   }
 
   const tabs = [
     { id: 0, class: 'current', icon: temperatureIcon },
     { id: 1, class: 'sun', icon: sunIcon },
     { id: 2, class: 'moon', icon: moonIcon },
-    { id: 3, class: 'info', icon: myInfo },
   ];
 
   return (
@@ -31,8 +35,6 @@ function WeatherCards({ weatherData }) {
             ? 'sun'
             : card === 'moon'
             ? 'moon'
-            : card === 'info'
-            ? 'info'
             : ''
         }`}
       >
@@ -48,8 +50,10 @@ function WeatherCards({ weatherData }) {
           forecast={forecast}
           location={location}
           card={card}
+          setShowInfo={setShowInfo}
         />
         <div className='tabs'>
+          <Info showInfo={showInfo} />
           {tabs?.map((tab) => (
             <span
               key={tab.id}
@@ -59,6 +63,13 @@ function WeatherCards({ weatherData }) {
               {tab.icon}
             </span>
           ))}
+          <span
+            id='info'
+            className={`tab ${showInfo ? '' : 'inactive'}`}
+            onClick={() => setShowInfo(!showInfo)}
+          >
+            {myInfo}
+          </span>
         </div>
       </div>
     </div>
