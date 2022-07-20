@@ -251,16 +251,13 @@
 
 @media screen and (max-width: 400px) {
   .card {
-    padding: 3rem;
+    padding: 3rem 3rem 5rem 3rem;
   }
   .card .current-main .current-temp h1 {
     font-size: 9.6rem;
   }
-  .card img {
-    width: 4rem;
-  }
   .card .tabs {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
   .card .current-main .dates .day {
     width: auto;

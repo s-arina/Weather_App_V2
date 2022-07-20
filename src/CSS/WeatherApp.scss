@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   color: var(--slate);
-  height: 100vh;
+  height: 100%;
   .loading {
     display: flex;
     justify-content: center;
@@ -13,11 +13,6 @@
     border-radius: 1rem;
     width: 35rem;
     height: 55rem;
-  }
-  &.sun {
-  }
-  &.moon {
-    background-color: var(--black);
   }
   .date {
     display: flex;

@@ -166,24 +166,26 @@
 }
 
 @media screen and (max-width: 600px) {
-  .card .current-main .dates {
-    justify-content: space-between;
-    margin: 0;
-    gap: 0;
+  .card {
+    .current-main .dates {
+      justify-content: space-between;
+      margin: 0;
+      gap: 0;
+    }
   }
 }
 
 @media screen and (max-width: 400px) {
   .card {
-    padding: 3rem;
+    padding: 3rem 3rem 5rem 3rem;
     .current-main .current-temp h1 {
       font-size: 9.6rem;
     }
-    img {
-      width: 4rem;
-    }
+    // img {
+    //   width: 4rem;
+    // }
     .tabs {
-      margin-top: 3rem;
+      margin-top: 5rem;
     }
   }
   .card .current-main .dates .day {

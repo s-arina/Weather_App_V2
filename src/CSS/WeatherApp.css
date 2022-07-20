@@ -13,7 +13,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   color: var(--slate);
-  height: 100vh;
+  height: 100%;
 }
 
 .weather-app .loading {
@@ -30,10 +30,6 @@
   border-radius: 1rem;
   width: 35rem;
   height: 55rem;
-}
-
-.weather-app.moon {
-  background-color: var(--black);
 }
 
 .weather-app .date {
