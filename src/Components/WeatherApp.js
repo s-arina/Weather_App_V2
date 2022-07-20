@@ -6,8 +6,6 @@ import DateLocation from './DateLocation';
 import RequestLocation from './RequestLocation';
 
 function WeatherApp() {
-  // const card = document.getElementsByClassName('current')[0].className;
-  // CLASSNAME UNDEFINED AT INITIAL RENDER
   const key = process.env.REACT_APP_WEATHER_API;
 
   const url = 'http://api.weatherapi.com/v1/';

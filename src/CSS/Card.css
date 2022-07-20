@@ -10,10 +10,8 @@
   background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: var(--white);
   width: 100vw;
-  height: 100vh;
   padding: 5rem;
   position: relative;
-  overflow: hidden;
 }
 
 .card.current {
@@ -137,11 +135,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 9rem;
   height: 12rem;
   border-radius: 1rem;
   padding: 2rem;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
+  -webkit-box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.2), 3px 3px 5px rgba(0, 0, 0, 0.13);
+          box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.2), 3px 3px 5px rgba(0, 0, 0, 0.13);
   cursor: pointer;
 }
 
@@ -159,12 +160,9 @@
   letter-spacing: 2px;
 }
 
-.card .current-main .dates .day:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .card .current-main .dates .day.active {
-  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset -3px -3px 5px rgba(255, 255, 255, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.13);
+          box-shadow: inset -3px -3px 5px rgba(255, 255, 255, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.13);
 }
 
 .card .current-main .precip-wind {
@@ -244,6 +242,24 @@
             justify-content: space-between;
     margin: 0;
     gap: 0;
+  }
+  .card .tabs {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 3rem;
+  }
+  .card .current-main .current-temp h1 {
+    font-size: 9.6rem;
+  }
+  .card img {
+    width: 4rem;
+  }
+  .card .current-main .dates .day {
+    width: auto;
   }
 }
 

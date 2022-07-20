@@ -92,8 +92,8 @@
   margin: auto;
   inset: 0;
   width: 70px;
-  -webkit-animation: ray_anim 120s linear infinite;
-          animation: ray_anim 120s linear infinite;
+  -webkit-animation: ray_anim 60s linear infinite;
+          animation: ray_anim 60s linear infinite;
 }
 
 .sun-box .ray {

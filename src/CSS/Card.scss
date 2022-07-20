@@ -4,10 +4,8 @@
   background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: var(--white);
   width: 100vw;
-  height: 100vh;
   padding: 5rem;
   position: relative;
-  overflow: hidden;
   &.current {
     background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   }
@@ -87,10 +85,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 9rem;
         height: 12rem;
         border-radius: 1rem;
         padding: 2rem;
         transition: ease 0.5s;
+        box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.2),
+          3px 3px 5px rgba(0, 0, 0, 0.13);
         cursor: pointer;
         h2 {
           font-size: var(--h2);
@@ -104,10 +105,12 @@
           letter-spacing: 2px;
         }
         &:hover {
-          background-color: rgba(255, 255, 255, 0.3);
+          // background-color: rgba(255, 255, 255, 0.3);
         }
         &.active {
-          background-color: rgba(255, 255, 255, 0.3);
+          // background-color: rgba(255, 255, 255, 0.3);
+          box-shadow: inset -3px -3px 5px rgba(255, 255, 255, 0.2),
+            inset 3px 3px 5px rgba(0, 0, 0, 0.13);
         }
       }
     }
@@ -160,10 +163,30 @@
 }
 
 @media screen and (max-width: 600px) {
-  .card .current-main .dates {
-    justify-content: space-between;
-    margin: 0;
-    gap: 0;
+  .card {
+    .current-main .dates {
+      justify-content: space-between;
+      margin: 0;
+      gap: 0;
+    }
+    .tabs {
+      margin-top: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 3rem;
+    .current-main .current-temp h1 {
+      font-size: 9.6rem;
+    }
+    img {
+      width: 4rem;
+    }
+  }
+  .card .current-main .dates .day {
+    width: auto;
   }
 }
 
