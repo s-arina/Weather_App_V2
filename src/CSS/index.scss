@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -18,12 +18,12 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: -webkit-gradient(linear, left top, left bottom, from(#555297), to(#ec7173));
   background: linear-gradient(#555297, #ec7173);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 a {
@@ -33,4 +33,3 @@ a {
 #root {
   height: 100vh;
 }
-/*# sourceMappingURL=index.css.map */

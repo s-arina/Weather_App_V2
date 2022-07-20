@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Current from './Current';
 import { temperatureIcon, sunIcon, moonIcon, myInfo } from './Icons';
 import Info from './Info';
+import '../css/index.css';
+import '../css/root.css';
 import '../css/Stars.css';
 
 function WeatherCards({ weatherData }) {

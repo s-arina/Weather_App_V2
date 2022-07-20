@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/Index.css';
+import './css/index.css';
 import WeatherApp from './Components/WeatherApp';
 import reportWebVitals from './reportWebVitals';
 
