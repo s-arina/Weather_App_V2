@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Current from './Current';
-import { temperatureIcon, sunIcon, moonIcon } from './Icons';
+import { temperatureIcon, sunIcon, moonIcon, myInfo } from './Icons';
 import '../css/Stars.css';
 
-function Weather({ weatherData }) {
+function WeatherCards({ weatherData }) {
   const current = weatherData.current;
   const forecast = weatherData.forecast.forecastday;
   const location = weatherData.location;
@@ -18,6 +18,7 @@ function Weather({ weatherData }) {
     { id: 0, class: 'current', icon: temperatureIcon },
     { id: 1, class: 'sun', icon: sunIcon },
     { id: 2, class: 'moon', icon: moonIcon },
+    { id: 3, class: 'info', icon: myInfo },
   ];
 
   return (
@@ -30,6 +31,8 @@ function Weather({ weatherData }) {
             ? 'sun'
             : card === 'moon'
             ? 'moon'
+            : card === 'info'
+            ? 'info'
             : ''
         }`}
       >
@@ -62,4 +65,4 @@ function Weather({ weatherData }) {
   );
 }
 
-export default Weather;
+export default WeatherCards;

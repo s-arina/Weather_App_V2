@@ -1,7 +1,7 @@
 import '../css/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Weather from './Weather';
+import WeatherCards from './WeatherCards';
 import DateLocation from './DateLocation';
 import RequestLocation from './RequestLocation';
 
@@ -15,7 +15,6 @@ function WeatherApp() {
   const [weatherData, setWeatherData] = useState([]);
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(true);
-  const [width, setWidth] = React.useState(window.innerWidth);
   const [request, setRequest] = useState(false);
 
   const success = function (position) {
@@ -73,7 +72,7 @@ function WeatherApp() {
       </div> */}
 
       {weatherData?.current && weatherData?.location ? (
-        <Weather weatherData={weatherData} />
+        <WeatherCards weatherData={weatherData} />
       ) : null}
       {/* {request && weatherData?.current && weatherData?.location ? (
         <Weather weatherData={weatherData} />

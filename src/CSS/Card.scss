@@ -1,7 +1,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: var(--white);
   width: 100vw;
   padding: 5rem;
@@ -134,8 +133,10 @@
   .tabs {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
     margin-top: 5rem;
     gap: 2rem;
+    position: relative;
 
     .tab {
       display: flex;
@@ -163,15 +164,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  .card {
-    .current-main .dates {
-      justify-content: space-between;
-      margin: 0;
-      gap: 0;
-    }
-    .tabs {
-      margin-top: 3rem;
-    }
+  .card .current-main .dates {
+    justify-content: space-between;
+    margin: 0;
+    gap: 0;
   }
 }
 
@@ -183,6 +179,9 @@
     }
     img {
       width: 4rem;
+    }
+    .tabs {
+      margin-top: 3rem;
     }
   }
   .card .current-main .dates .day {

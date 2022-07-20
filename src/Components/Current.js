@@ -3,6 +3,7 @@ import { getWeekday, formatDate } from './DateFns';
 import { raindropIcon, windIcon } from './Icons';
 import Sun from './Sun';
 import Moon from './Moon';
+import Info from './Info';
 import '../css/Card.css';
 import '../css/Stars.css';
 
@@ -87,6 +88,8 @@ function Current({ current, forecast, location, card }) {
         <Sun chosenDateInfo={chosenDateInfo} />
       ) : card === 'moon' ? (
         <Moon chosenDateInfo={chosenDateInfo} />
+      ) : card === 'info' ? (
+        <Info />
       ) : null}
     </div>
   );

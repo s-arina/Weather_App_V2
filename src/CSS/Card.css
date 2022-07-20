@@ -6,8 +6,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #74c5d9), color-stop(70%, #f1d2ad), color-stop(80%, #ffc7c7));
-  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
   color: var(--white);
   width: 100vw;
   padding: 5rem;
@@ -200,8 +198,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 auto;
   margin-top: 5rem;
   gap: 2rem;
+  position: relative;
 }
 
 .card .tabs .tab {
@@ -243,9 +243,6 @@
     margin: 0;
     gap: 0;
   }
-  .card .tabs {
-    margin-top: 3rem;
-  }
 }
 
 @media screen and (max-width: 400px) {
@@ -257,6 +254,9 @@
   }
   .card img {
     width: 4rem;
+  }
+  .card .tabs {
+    margin-top: 3rem;
   }
   .card .current-main .dates .day {
     width: auto;

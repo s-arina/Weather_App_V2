@@ -25,3 +25,7 @@ export const sunIcon = (
 export const moonIcon = (
   <Icon icon='ci:moon' color='white' height='25' width='25' />
 );
+
+export const myInfo = (
+  <Icon icon='bi:info-lg' color='white' height='25' width='25' />
+);
