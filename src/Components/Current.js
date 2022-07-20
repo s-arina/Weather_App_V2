@@ -3,8 +3,8 @@ import { getWeekday, formatDate } from './DateFns';
 import { raindropIcon, windIcon } from './Icons';
 import Sun from './Sun';
 import Moon from './Moon';
-import '../css/Card.css';
-import '../css/Stars.css';
+import '../CSS/Card.css';
+import '../CSS/Stars.css';
 
 function Current({ current, forecast, location, card, setShowInfo }) {
   // current is only being used for todays temp

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GithubIcon, LinkedInIcon, Portfolio } from './Icons';
-import '../css/Info.css';
+import '../CSS/Info.css';
 
 function Info({ showInfo }) {
   return (

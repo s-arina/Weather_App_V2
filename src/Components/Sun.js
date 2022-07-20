@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Sun.css';
+import '../CSS/Sun.css';
 
 function Sun({ chosenDateInfo }) {
   const astro = chosenDateInfo.astro;

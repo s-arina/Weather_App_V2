@@ -1,4 +1,4 @@
-import '../css/WeatherApp.css';
+import '../CSS/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import WeatherCards from './WeatherCards';
