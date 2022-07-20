@@ -4,7 +4,7 @@ import '../CSS/Sun.css';
 function Sun({ chosenDateInfo }) {
   const astro = chosenDateInfo.astro;
   const day = chosenDateInfo.day;
-  console.log(chosenDateInfo);
+
   const sunInfo = [
     { id: 0, name: 'Rise', info: astro.sunrise },
     { id: 1, name: 'Set', info: astro.sunset },

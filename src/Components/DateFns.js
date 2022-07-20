@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function getWeekday(day) {
   const [yyyy, mm, dd] = day.split('-'),
     date = new Date(yyyy, mm - 1, dd);

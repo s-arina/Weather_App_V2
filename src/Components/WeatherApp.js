@@ -2,13 +2,13 @@ import '../CSS/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import WeatherCards from './WeatherCards';
-import DateLocation from './DateLocation';
-import RequestLocation from './RequestLocation';
+// import DateLocation from './DateLocation';
+// import RequestLocation from './RequestLocation';
 
 function WeatherApp() {
   const key = process.env.REACT_APP_WEATHER_API;
 
-  const url = 'http://api.weatherapi.com/v1/';
+  const url = 'https://api.weatherapi.com/v1/';
 
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
