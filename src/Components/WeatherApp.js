@@ -2,6 +2,7 @@ import '../CSS/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import WeatherCards from './WeatherCards';
+import MobilePreview from './MobilePreview';
 // import DateLocation from './DateLocation';
 // import RequestLocation from './RequestLocation';
 
@@ -63,8 +64,8 @@ function WeatherApp() {
 
   return (
     <div className='weather-app'>
-      {/* <button onClick={() => getLocation()}>Get location</button> */}
-      {/* {!request ? <RequestLocation setRequest={setRequest} /> : null} */}
+      {/* <MobilePreview /> */}
+
       {/* <DateLocation date={date} weatherData={weatherData} /> */}
 
       {/* <div className='loading'>
@@ -74,9 +75,6 @@ function WeatherApp() {
       {weatherData?.current && weatherData?.location ? (
         <WeatherCards weatherData={weatherData} />
       ) : null}
-      {/* {request && weatherData?.current && weatherData?.location ? (
-        <Weather weatherData={weatherData} />
-      ) : null} */}
     </div>
   );
 }

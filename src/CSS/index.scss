@@ -1,6 +1,16 @@
 @font-face {
-  font-family: 'Ubuntu-M';
+  font-family: Ubuntu-M;
   src: url('/public/Ubuntu-M.ttf');
+}
+
+@font-face {
+  font-family: SPB;
+  src: url('/public/SofiaProSemiBold.otf');
+}
+
+@font-face {
+  font-family: SPR;
+  src: url('/public/SofiaProRegular.otf');
 }
 
 * {
@@ -8,20 +18,18 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  font-family: 'Ubuntu-M', sans-serif;
+  font-family: SPB, SPR, Ubuntu-M, sans-serif;
 }
 
 html {
   font-size: 10px;
+  height: 100%;
 }
 
 body {
-  overflow-x: hidden;
-  // position: fixed;
-  // min-height: 100vh;
-  min-height: 100svh;
-  // height: 100%;
+  overflow: hidden;
   background: linear-gradient(#555297, #ec7173);
+  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
 }
 
 code {
