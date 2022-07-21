@@ -64,17 +64,17 @@ function WeatherApp() {
 
   return (
     <div className='weather-app'>
-      {/* <MobilePreview /> */}
+      <MobilePreview />
 
       {/* <DateLocation date={date} weatherData={weatherData} /> */}
 
       {/* <div className='loading'>
         {!request && loading && <h1>Getting Data...</h1>}
       </div> */}
-
+      {/* 
       {weatherData?.current && weatherData?.location ? (
         <WeatherCards weatherData={weatherData} />
-      ) : null}
+      ) : null} */}
     </div>
   );
 }

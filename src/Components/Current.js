@@ -40,48 +40,49 @@ function Current({ current, forecast, location, card, setShowInfo }) {
 
       {card === 'current' ? (
         <>
-          <div className='current-temp'>
-            <img src={chosenDateInfo.day.condition.icon} alt='icon' />
+          <div className='current-card'>
+            <div className='current-temp'>
+              <img src={chosenDateInfo.day.condition.icon} alt='icon' />
+              {/* only show this if the date is today */}
+              {today.date === chosenDateInfo.date ? (
+                <h1>{Math.round(current.feelslike_f)}</h1>
+              ) : (
+                <h1>{Math.round(chosenDateInfo.day.maxtemp_f)}</h1>
+              )}
 
-            {/* only show this if the date is today */}
-            {today.date === chosenDateInfo.date ? (
-              <h1>{Math.round(current.feelslike_f)}</h1>
-            ) : (
-              <h1>{Math.round(chosenDateInfo.day.maxtemp_f)}</h1>
-            )}
-
-            <h2>
-              {Math.round(chosenDateInfo.day.maxtemp_f)}&#176; /&nbsp;&nbsp;
-              {Math.round(chosenDateInfo.day.mintemp_f)}&#176;
-            </h2>
-            <h3>{chosenDateInfo.day.condition.text}</h3>
-          </div>
-
-          <div className='precip-wind'>
-            <div className='precip'>
-              {raindropIcon}
-              <h3>{chosenDateInfo.day.daily_chance_of_rain}%</h3>
+              <h2>
+                {Math.round(chosenDateInfo.day.maxtemp_f)}&#176; /&nbsp;&nbsp;
+                {Math.round(chosenDateInfo.day.mintemp_f)}&#176;
+              </h2>
+              <h3>{chosenDateInfo.day.condition.text}</h3>
             </div>
-            <div className='wind'>
-              {windIcon}
-              <h3>{chosenDateInfo.day.maxwind_mph} mph</h3>
-            </div>
-          </div>
-          <div className='dates'>
-            {forecast.map((date) => (
-              <div
-                className={`day ${
-                  isToday === date.date || chooseDate === date.date
-                    ? 'active'
-                    : ''
-                }`}
-                key={date.date}
-                onClick={() => handleClick(date.date)}
-              >
-                <h3>{getWeekday(date.date).slice(0, 3).toUpperCase()}</h3>
-                <h2>{Math.round(date.day.maxtemp_f)}&#176;</h2>
+
+            <div className='precip-wind'>
+              <div className='precip'>
+                {raindropIcon}
+                <h3>{chosenDateInfo.day.daily_chance_of_rain}%</h3>
               </div>
-            ))}
+              <div className='wind'>
+                {windIcon}
+                <h3>{chosenDateInfo.day.maxwind_mph} mph</h3>
+              </div>
+            </div>
+            <div className='dates'>
+              {forecast.map((date) => (
+                <div
+                  className={`day ${
+                    isToday === date.date || chooseDate === date.date
+                      ? 'active'
+                      : ''
+                  }`}
+                  key={date.date}
+                  onClick={() => handleClick(date.date)}
+                >
+                  <h3>{getWeekday(date.date).slice(0, 3).toUpperCase()}</h3>
+                  <h2>{Math.round(date.day.maxtemp_f)}&#176;</h2>
+                </div>
+              ))}
+            </div>
           </div>
         </>
       ) : card === 'sun' ? (
