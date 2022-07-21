@@ -219,9 +219,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding: 0.5rem;
-  width: 5rem;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 0.7rem;
+  width: 5.5rem;
+  -webkit-box-shadow: 0px 0px 10px var(--white);
+          box-shadow: 0px 0px 10px var(--white);
   border-radius: 2rem;
   opacity: 1;
   cursor: pointer;
@@ -230,12 +231,14 @@
 .card .tabs .tab.inactive {
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  opacity: 70%;
+  -webkit-box-shadow: 0px 0px 5px var(--white);
+          box-shadow: 0px 0px 5px var(--white);
+  opacity: 50%;
 }
 
 .card .tabs .tab.inactive:hover {
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 10px var(--white);
+          box-shadow: 0px 0px 10px var(--white);
   opacity: 1;
 }
 

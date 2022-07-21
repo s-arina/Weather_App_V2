@@ -58,9 +58,9 @@ function MobilePreview(props) {
         </div>
         <div className='tabs'>
           <span className='tab'>{temperatureIcon}</span>
-          <span className='tab'>{sunIcon}</span>
-          <span className='tab'>{moonIcon}</span>
-          <span className='tab'>{myInfo}</span>
+          <span className='tab inactive'>{sunIcon}</span>
+          <span className='tab inactive'>{moonIcon}</span>
+          <span className='tab inactive'>{myInfo}</span>
         </div>
       </div>
     </div>
