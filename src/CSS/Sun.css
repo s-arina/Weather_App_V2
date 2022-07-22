@@ -91,7 +91,7 @@
   position: absolute;
   margin: auto;
   inset: 0;
-  width: 70px;
+  width: 7rem;
   -webkit-animation: ray_anim 60s linear infinite;
           animation: ray_anim 60s linear infinite;
 }
@@ -110,78 +110,78 @@
 }
 
 .sun-box .ray.tleftS, .sun-box .ray.trightS, .sun-box .ray.centerS, .sun-box .ray.bleftS, .sun-box .ray.brightS {
-  height: 110px;
-  width: 10px;
+  height: 11rem;
+  width: 1rem;
 }
 
 .sun-box .ray.tleft {
   -webkit-transform: rotate(115deg);
           transform: rotate(115deg);
-  top: -90px;
-  left: -95px;
+  top: -9rem;
+  left: -9.5rem;
 }
 
 .sun-box .ray.tright {
   -webkit-transform: rotate(245deg);
           transform: rotate(245deg);
-  top: -90px;
-  right: -95px;
+  top: -9rem;
+  right: -9.5rem;
 }
 
 .sun-box .ray.center {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  top: -160px;
-  right: 20px;
+  top: -16rem;
+  right: 2rem;
 }
 
 .sun-box .ray.bleft {
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
-  top: 60px;
-  left: -65px;
+  top: 6rem;
+  left: -6.5rem;
 }
 
 .sun-box .ray.bright {
   -webkit-transform: rotate(320deg);
           transform: rotate(320deg);
-  top: 60px;
-  right: -65px;
+  top: 6rem;
+  right: -6.5rem;
 }
 
 .sun-box .ray.tleftS {
   -webkit-transform: rotate(145deg);
           transform: rotate(145deg);
-  top: -90px;
-  left: -30px;
+  top: -9rem;
+  left: -3rem;
 }
 
 .sun-box .ray.trightS {
   -webkit-transform: rotate(215deg);
           transform: rotate(215deg);
-  top: -90px;
-  right: -30px;
+  top: -9rem;
+  right: -3rem;
 }
 
 .sun-box .ray.centerS {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
-  bottom: -107px;
-  right: 30px;
+  bottom: -10.7rem;
+  right: 3rem;
 }
 
 .sun-box .ray.bleftS {
   -webkit-transform: rotate(75deg);
           transform: rotate(75deg);
-  top: 15px;
-  left: -70px;
+  top: 1.5rem;
+  left: -7rem;
 }
 
 .sun-box .ray.brightS {
   -webkit-transform: rotate(285deg);
           transform: rotate(285deg);
-  top: 15px;
-  right: -70px;
+  top: 1.5rem;
+  right: -7rem;
 }
 
 @media screen and (max-width: 400px) {

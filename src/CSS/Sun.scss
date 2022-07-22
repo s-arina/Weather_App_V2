@@ -52,7 +52,7 @@
     position: absolute;
     margin: auto;
     inset: 0;
-    width: 70px;
+    width: 7rem;
     animation: ray_anim 60s linear infinite;
   }
   .ray {
@@ -73,58 +73,58 @@
     &.centerS,
     &.bleftS,
     &.brightS {
-      height: 110px;
-      width: 10px;
+      height: 11rem;
+      width: 1rem;
     }
     &.tleft {
       transform: rotate(115deg);
-      top: -90px;
-      left: -95px;
+      top: -9rem;
+      left: -9.5rem;
     }
     &.tright {
       transform: rotate(245deg);
-      top: -90px;
-      right: -95px;
+      top: -9rem;
+      right: -9.5rem;
     }
     &.center {
       transform: rotate(180deg);
-      top: -160px;
-      right: 20px;
+      top: -16rem;
+      right: 2rem;
     }
     &.bleft {
       transform: rotate(40deg);
-      top: 60px;
-      left: -65px;
+      top: 6rem;
+      left: -6.5rem;
     }
     &.bright {
       transform: rotate(320deg);
-      top: 60px;
-      right: -65px;
+      top: 6rem;
+      right: -6.5rem;
     }
     &.tleftS {
       transform: rotate(145deg);
-      top: -90px;
-      left: -30px;
+      top: -9rem;
+      left: -3rem;
     }
     &.trightS {
       transform: rotate(215deg);
-      top: -90px;
-      right: -30px;
+      top: -9rem;
+      right: -3rem;
     }
     &.centerS {
       transform: rotate(360deg);
-      bottom: -107px;
-      right: 30px;
+      bottom: -10.7rem;
+      right: 3rem;
     }
     &.bleftS {
       transform: rotate(75deg);
-      top: 15px;
-      left: -70px;
+      top: 1.5rem;
+      left: -7rem;
     }
     &.brightS {
       transform: rotate(285deg);
-      top: 15px;
-      right: -70px;
+      top: 1.5rem;
+      right: -7rem;
     }
   }
 }

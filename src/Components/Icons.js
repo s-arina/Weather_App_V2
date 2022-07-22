@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 
+// ========================= CURRENT ICONS
 export const raindropIcon = (
   <Icon icon='uil:raindrops' color='white' width='25' height='25' />
 );
@@ -9,6 +10,7 @@ export const windIcon = (
   <Icon icon='bx:wind' color='white' width='25' height='25' />
 );
 
+// ========================= TAB ICONS
 export const temperatureIcon = (
   <Icon
     icon='fluent:temperature-24-filled'
@@ -30,6 +32,23 @@ export const myInfo = (
   <Icon icon='bi:info-lg' color='white' height='25' width='25' />
 );
 
+// ========================= RELOAD ICON
+function handleRefresh() {
+  window.location.reload();
+}
+
+export const reload = (
+  <Icon
+    icon='foundation:refresh'
+    color='white'
+    height='20'
+    width='20'
+    className='reload'
+    onClick={() => handleRefresh()}
+  />
+);
+
+// ========================= INFO ICONS
 export const GithubIcon = (
   <a
     href='https://github.com/s-arina/Weather_App'

@@ -1,9 +1,4 @@
 @font-face {
-  font-family: Ubuntu-M;
-  src: url('/public/Ubuntu-M.ttf');
-}
-
-@font-face {
   font-family: SPB;
   src: url('/public/SofiaProSemiBold.otf');
 }
@@ -18,7 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  font-family: SPB, SPR, Ubuntu-M, sans-serif;
+  font-family: SPB, SPR, sans-serif;
 }
 
 html {
@@ -28,8 +23,7 @@ html {
 
 body {
   overflow: hidden;
-  background: linear-gradient(#555297, #ec7173);
-  background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
+  background: linear-gradient(#021545, #0c5aaa, #6795c5, #f8d0b0);
 }
 
 code {

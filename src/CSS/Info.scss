@@ -1,10 +1,10 @@
 .info-card {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 1rem 1.5rem;
   border-radius: 2rem;
   position: absolute;
-  bottom: 50px;
-  right: -30px;
+  bottom: 5.5rem;
+  right: -3rem;
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -17,7 +17,7 @@
     gap: 1rem;
   }
   svg {
-    width: 20px;
+    width: 2rem;
     height: 100%;
     fill: transparent;
   }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getWeekday, formatDate } from './DateFns';
-import { raindropIcon, windIcon } from './Icons';
+import { raindropIcon, windIcon, reload } from './Icons';
 import Sun from './Sun';
 import Moon from './Moon';
 import '../CSS/Card.css';
@@ -55,6 +55,7 @@ function Current({ current, forecast, location, card, setShowInfo }) {
                 {Math.round(chosenDateInfo.day.mintemp_f)}&#176;
               </h2>
               <h3>{chosenDateInfo.day.condition.text}</h3>
+              {reload}
             </div>
 
             <div className='precip-wind'>

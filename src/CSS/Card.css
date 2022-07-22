@@ -115,7 +115,7 @@
   position: absolute;
   font-size: 0.5em;
   top: -3.5rem;
-  right: -2.5rem;
+  right: -3rem;
 }
 
 .card .current-main .current-temp h2 {
@@ -256,6 +256,17 @@
 
 .card img {
   width: 7rem;
+}
+
+.card .reload {
+  cursor: pointer;
+  opacity: 70%;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+.card .reload:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {

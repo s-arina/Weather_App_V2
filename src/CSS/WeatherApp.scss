@@ -3,17 +3,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--slate);
   position: fixed; // to deal with mobile vh address bar issue
   height: 100%; //
-  .loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px black;
-    border-radius: 1rem;
-    width: 35rem;
-    height: 55rem;
+  width: 100%;
+  .loading-error {
+    color: white;
+    font-size: var(--h3);
+    letter-spacing: 1px;
   }
   .date {
     display: flex;

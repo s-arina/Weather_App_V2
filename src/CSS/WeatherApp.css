@@ -12,25 +12,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: var(--slate);
   position: fixed;
   height: 100%;
+  width: 100%;
 }
 
-.weather-app .loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: solid 1px black;
-  border-radius: 1rem;
-  width: 35rem;
-  height: 55rem;
+.weather-app .loading-error {
+  color: white;
+  font-size: var(--h3);
+  letter-spacing: 1px;
 }
 
 .weather-app .date {
