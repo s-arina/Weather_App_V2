@@ -40,9 +40,9 @@
       flex: 1;
     }
     .current-date {
+      text-transform: uppercase;
       h2 {
         font-size: var(--h2);
-        text-transform: uppercase;
         letter-spacing: 3px;
         line-height: 1.5em;
         margin-bottom: 1rem;
@@ -50,7 +50,7 @@
       h3 {
         font-family: SPR;
         font-size: var(--h3);
-        text-transform: uppercase;
+
         opacity: 70%;
         letter-spacing: 3px;
       }
@@ -187,7 +187,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .card {
     padding: 3rem 3rem 4rem 3rem;
     .current-main {
@@ -202,7 +202,7 @@
         }
       }
       .dates {
-        justify-content: space-between;
+        justify-content: space-evenly;
         gap: 1rem;
         flex-wrap: wrap;
       }
