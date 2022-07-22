@@ -155,4 +155,10 @@
     left: 100%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .moon-card .moon-info-container {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Moon.css.map */

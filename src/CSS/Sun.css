@@ -183,4 +183,10 @@
   top: 15px;
   right: -70px;
 }
+
+@media screen and (max-width: 400px) {
+  .sun-card .sun-info-container {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Sun.css.map */

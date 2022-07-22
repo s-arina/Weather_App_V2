@@ -6,10 +6,10 @@
   padding: 5rem;
   position: relative;
   &.current {
-    background: linear-gradient(#74c5d9 40%, #f1d2ad 70%, #ffc7c7 80%);
+    background: linear-gradient(#021545, #0c5aaa, #6795c5, #f8d0b0);
   }
   &.moon {
-    background: linear-gradient(#010013, #191c44, #605a82);
+    background: linear-gradient(#010903, #002161, #5d497c);
     position: relative;
     overflow: hidden;
     .stars-container {
@@ -25,7 +25,7 @@
     }
   }
   &.sun {
-    background: linear-gradient(#ea4d2c, #ff881b, #ffa62e, #ffcf1b);
+    background: linear-gradient(#1f476a, #377abe, #b8bfc5, #ddb285, #ff5c3d);
   }
   .current-main {
     display: flex;
@@ -62,9 +62,8 @@
       flex: 0;
       gap: 1rem;
       h1 {
-        line-height: 0.8em;
+        line-height: 1em;
         font-size: var(--h1);
-        margin-bottom: 1rem;
         position: relative;
         &::after {
           content: '\00b0';
@@ -149,17 +148,16 @@
       text-align: center;
       padding: 0.7rem;
       width: 5.5rem;
-      box-shadow: 0px 0px 10px var(--white);
+      box-shadow: 0px 0px 15px var(--white);
       border-radius: 2rem;
       opacity: 1;
       cursor: pointer;
       &.inactive {
         transition: ease 0.3s;
         box-shadow: 0px 0px 5px var(--white);
-
-        opacity: 50%;
+        opacity: 70%;
         &:hover {
-          box-shadow: 0px 0px 10px var(--white);
+          box-shadow: 0px 0px 15px var(--white);
           opacity: 1;
         }
       }
@@ -182,10 +180,10 @@
 
 @media screen and (max-width: 400px) {
   .card {
-    padding: 3rem 3rem 5rem 3rem;
+    padding: 3rem 3rem 4rem 3rem;
     .current-main {
       .current-temp h1 {
-        // font-size: 9.6rem;
+        font-size: 10.8rem;
         &::after {
           content: '\00b0';
           position: absolute;
@@ -202,7 +200,7 @@
     }
 
     img {
-      width: 4rem;
+      width: 6rem;
     }
     .tabs {
       margin-top: 0rem;
