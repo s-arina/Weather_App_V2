@@ -13,7 +13,7 @@ function WeatherApp() {
 
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
-  const [weatherData, setWeatherData] = useState(['null']);
+  const [weatherData, setWeatherData] = useState([]);
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -27,28 +27,18 @@ function WeatherApp() {
   // }, []);
 
   useEffect(() => {
-    // api call runs on button confirmation in Location
-    // and if permission is granted
-    // run this FIRST useEffect
-
-    // console.log('permission state in useeffect:', permission);
-
-    navigator.permissions
-      .query({ name: 'geolocation' })
-      .then(function (permissionStatus) {
-        setPermission(permissionStatus.state);
-
-        permissionStatus.onchange = function () {
-          setPermission(this.state);
-        };
-      });
-
-    // console.log('permission state after permissionapi:', permission);
-  });
+    // PERMISSIONS API
+    // run this FIRST useEffect to set the state before api call
+    if (/prompt|denied|^$/gi.test(permission)) {
+      locationPermission();
+    }
+  }, [request, permission]);
 
   useEffect(() => {
+    // api call runs on button confirmation in Location
+    // and if permission is granted
     fetchWeatherData();
-  }, [lat, long, request]);
+  }, [lat, long]);
 
   // api call
   const fetchWeatherData = async () => {
@@ -68,20 +58,27 @@ function WeatherApp() {
     }
   };
 
-  // permissions api
-  // navigator.permissions
-  //   .query({ name: 'geolocation' })
-  //   .then(function (permissionStatus) {
-  //     setPermission(permissionStatus.state);
+  const locationPermission = () => {
+    navigator.permissions
+      .query({ name: 'geolocation' })
+      .then(function (permissionStatus) {
+        setPermission(permissionStatus.state);
 
-  //     permissionStatus.onchange = function () {
-  //       setPermission(this.state);
-  //     };
-  //   });
+        permissionStatus.onchange = function () {
+          setPermission(this.state);
+        };
+      });
+  };
 
   return (
     <div className='weather-app'>
-      {permission === 'prompt' ? <Location setRequest={setRequest} /> : null}
+      {/prompt|denied|^$/gi.test(permission) && (
+        <Location
+          setRequest={setRequest}
+          fetchWeatherData={fetchWeatherData}
+          permission={permission}
+        />
+      )}
       {/* <MobilePreview /> */}
 
       {/* <DateTime date={date} /> */}

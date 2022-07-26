@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../CSS/Location.css';
 
-function Location({ setRequest }) {
+function Location({ setRequest, fetchWeatherData, permission }) {
   const [input, setInput] = useState('');
   const [submitted, setSubmitted] = useState('');
 
@@ -14,7 +14,7 @@ function Location({ setRequest }) {
     setSubmitted(input);
   }
 
-  console.log(submitted);
+  fetchWeatherData();
 
   return (
     <div className='landing'>
@@ -29,8 +29,20 @@ function Location({ setRequest }) {
       </div>
       <h3>or</h3>
       <div className='request-location'>
-        <button onClick={() => setRequest(true)}>Use current location</button>
+        <button
+          onClick={() => {
+            setRequest(true);
+            fetchWeatherData();
+          }}
+        >
+          Use current location
+        </button>
       </div>
+      {permission === 'denied' ? (
+        <h2 style={{ color: 'blue' }}>
+          Please enable location in browser to continue.
+        </h2>
+      ) : null}
     </div>
   );
 }
