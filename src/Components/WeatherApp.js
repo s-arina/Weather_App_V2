@@ -4,10 +4,10 @@ import axios from 'axios';
 import WeatherCards from './WeatherCards';
 import MobilePreview from './MobilePreview';
 import DateTime from './DateTime';
-import Location from './Location';
+import Landing from './Landing';
 
 function WeatherApp() {
-  const key = process.env.REACT_APP_WEATHER_API;
+  const apiKey = process.env.REACT_APP_WEATHER_API;
 
   const url = 'https://api.weatherapi.com/v1/';
 
@@ -17,7 +17,6 @@ function WeatherApp() {
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [request, setRequest] = useState(false);
   const [permission, setPermission] = useState('');
 
   // useEffect(() => {
@@ -29,10 +28,12 @@ function WeatherApp() {
   useEffect(() => {
     // PERMISSIONS API
     // run this FIRST useEffect to set the state before api call
-    if (/prompt|denied|^$/gi.test(permission)) {
+    if (permission !== 'granted') {
       locationPermission();
     }
-  }, [request, permission]);
+  }, [permission]);
+
+  console.log(permission);
 
   useEffect(() => {
     // api call runs on button confirmation in Location
@@ -40,25 +41,8 @@ function WeatherApp() {
     fetchWeatherData();
   }, [lat, long]);
 
-  // api call
-  const fetchWeatherData = async () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-      setLoading(true);
-    });
-    try {
-      const { data } = await axios.get(
-        `${url}forecast.json?key=${key}&q=${lat},${long}&days=3`
-      );
-      setLoading(false);
-      setWeatherData(data);
-    } catch (err) {
-      setError('Error: Could not retrieve data. Please try again.');
-    }
-  };
-
   const locationPermission = () => {
+    // https://developer.chrome.com/blog/permissions-api-for-the-web/
     navigator.permissions
       .query({ name: 'geolocation' })
       .then(function (permissionStatus) {
@@ -70,16 +54,29 @@ function WeatherApp() {
       });
   };
 
+  // api call for 3 day forecast
+  const fetchWeatherData = async () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+      setLoading(true);
+    });
+    try {
+      const { data } = await axios.get(
+        `${url}forecast.json?key=${apiKey}&q=${lat},${long}&days=3`
+      );
+      setLoading(false);
+      setWeatherData(data);
+    } catch (err) {
+      setError('Error: Could not retrieve data. Please try again.');
+    }
+  };
+
   return (
     <div className='weather-app'>
       {/prompt|denied|^$/gi.test(permission) && (
-        <Location
-          setRequest={setRequest}
-          fetchWeatherData={fetchWeatherData}
-          permission={permission}
-        />
+        <Landing permission={permission} />
       )}
-      {/* <MobilePreview /> */}
 
       {/* <DateTime date={date} /> */}
 

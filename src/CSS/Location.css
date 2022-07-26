@@ -2,9 +2,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -12,48 +9,25 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
-  padding: 2rem;
-  gap: 3rem;
+  gap: 2rem;
+  color: var(--white);
+}
+
+.landing h2 {
+  font-size: var(--h2);
+  letter-spacing: 2px;
+}
+
+.landing h2:nth-of-type(2) {
+  opacity: 70%;
 }
 
 .landing h3 {
-  color: white;
-}
-
-.landing .request-location {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: var(--white);
-}
-
-.landing .request-location button {
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 2rem;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-transition: ease 0.3s;
-  transition: ease 0.3s;
-  cursor: pointer;
-}
-
-.landing .request-location button:hover {
-  color: var(--white);
-  background-color: transparent;
-  -webkit-box-shadow: 0px 0px 10px var(--white);
-          box-shadow: 0px 0px 10px var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  letter-spacing: 1px;
+  color: var(--offwhite);
 }
 
 .landing input {
