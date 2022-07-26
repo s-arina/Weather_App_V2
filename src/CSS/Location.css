@@ -1,0 +1,65 @@
+.landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.landing h3 {
+  color: white;
+}
+
+.landing .request-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--white);
+}
+
+.landing .request-location button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.landing .request-location button:hover {
+  color: var(--white);
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 10px var(--white);
+          box-shadow: 0px 0px 10px var(--white);
+}
+
+.landing input {
+  border: 0;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+/*# sourceMappingURL=Location.css.map */

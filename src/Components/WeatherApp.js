@@ -4,6 +4,7 @@ import axios from 'axios';
 import WeatherCards from './WeatherCards';
 import MobilePreview from './MobilePreview';
 import DateTime from './DateTime';
+import Location from './Location';
 
 function WeatherApp() {
   const key = process.env.REACT_APP_WEATHER_API;
@@ -16,21 +17,45 @@ function WeatherApp() {
   const [date, setDate] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [request, setRequest] = useState(false);
+  const [permission, setPermission] = useState('');
+
+  // useEffect(() => {
+  //   setInterval(function () {
+  //     setDate(new Date());
+  //   }, 60 * 1000);
+  // }, []);
 
   useEffect(() => {
-    // setInterval(function () {
-    //   fetchweatherData();
-    //   setDate(new Date());
-    // }, 60 * 1000);
-    fetchWeatherData();
-    setDate(new Date());
-  }, [lat, long]);
+    // api call runs on button confirmation in Location
+    // and if permission is granted
+    // run this FIRST useEffect
 
+    // console.log('permission state in useeffect:', permission);
+
+    navigator.permissions
+      .query({ name: 'geolocation' })
+      .then(function (permissionStatus) {
+        setPermission(permissionStatus.state);
+
+        permissionStatus.onchange = function () {
+          setPermission(this.state);
+        };
+      });
+
+    // console.log('permission state after permissionapi:', permission);
+  });
+
+  useEffect(() => {
+    fetchWeatherData();
+  }, [lat, long, request]);
+
+  // api call
   const fetchWeatherData = async () => {
-    setLoading(true);
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
+      setLoading(true);
     });
     try {
       const { data } = await axios.get(
@@ -39,25 +64,37 @@ function WeatherApp() {
       setLoading(false);
       setWeatherData(data);
     } catch (err) {
-      // console.log(err.message || 'Error: Could not retrieve data.');
-      // console.log(err.response.data.error.message);
       setError('Error: Could not retrieve data. Please try again.');
     }
   };
 
+  // permissions api
+  // navigator.permissions
+  //   .query({ name: 'geolocation' })
+  //   .then(function (permissionStatus) {
+  //     setPermission(permissionStatus.state);
+
+  //     permissionStatus.onchange = function () {
+  //       setPermission(this.state);
+  //     };
+  //   });
+
   return (
     <div className='weather-app'>
+      {permission === 'prompt' ? <Location setRequest={setRequest} /> : null}
       {/* <MobilePreview /> */}
 
       {/* <DateTime date={date} /> */}
 
-      {loading ? (
-        <h3 className='loading-error'>Fetching data...</h3>
-      ) : weatherData?.current && weatherData?.location ? (
-        <WeatherCards weatherData={weatherData} />
-      ) : (
-        <h3>{error}</h3>
-      )}
+      {permission === 'granted' ? (
+        loading ? (
+          <h3 className='loading-msg'>Fetching data...</h3>
+        ) : weatherData?.current && weatherData?.location ? (
+          <WeatherCards weatherData={weatherData} />
+        ) : (
+          <h3 className='loading-msg'>{error}</h3>
+        )
+      ) : null}
     </div>
   );
 }
