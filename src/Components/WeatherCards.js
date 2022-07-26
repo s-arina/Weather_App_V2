@@ -5,7 +5,13 @@ import Info from './Info';
 import '../CSS/root.css';
 import '../CSS/Stars.css';
 
-function WeatherCards({ weatherData }) {
+function WeatherCards({
+  weatherData,
+  searchLocation,
+  searchResults,
+  setLat,
+  setLong,
+}) {
   const current = weatherData.current;
   const forecast = weatherData.forecast.forecastday;
   const location = weatherData.location;
@@ -52,6 +58,10 @@ function WeatherCards({ weatherData }) {
           location={location}
           card={card}
           setShowInfo={setShowInfo}
+          searchLocation={searchLocation}
+          searchResults={searchResults}
+          setLat={setLat}
+          setLong={setLong}
         />
         <div className='tabs'>
           <Info showInfo={showInfo} />

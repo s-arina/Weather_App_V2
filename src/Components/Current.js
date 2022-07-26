@@ -5,8 +5,19 @@ import Sun from './Sun';
 import Moon from './Moon';
 import '../CSS/Card.css';
 import '../CSS/Stars.css';
+import LocationSearch from './LocationSearch';
 
-function Current({ current, forecast, location, card, setShowInfo }) {
+function Current({
+  current,
+  forecast,
+  location,
+  card,
+  setShowInfo,
+  searchLocation,
+  searchResults,
+  setLat,
+  setLong,
+}) {
   // current is only being used for todays temp
   const today = forecast[0];
   const [chosenDateInfo, setChosenDateInfo] = useState(today);
@@ -30,6 +41,12 @@ function Current({ current, forecast, location, card, setShowInfo }) {
 
   return (
     <div className='current-main'>
+      <LocationSearch
+        searchLocation={searchLocation}
+        searchResults={searchResults}
+        setLat={setLat}
+        setLong={setLong}
+      />
       <div className='current-date'>
         <h2>{location.name}</h2>
         <h3>
@@ -37,7 +54,6 @@ function Current({ current, forecast, location, card, setShowInfo }) {
           {getWeekday(chosenDateInfo.date)}
         </h3>
       </div>
-
       {card === 'current' ? (
         <>
           <div className='current-card'>

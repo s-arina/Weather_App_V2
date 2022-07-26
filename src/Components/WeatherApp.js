@@ -7,6 +7,11 @@ import DateTime from './DateTime';
 import Landing from './Landing';
 
 function WeatherApp() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+  });
+
   const apiKey = process.env.REACT_APP_WEATHER_API;
 
   const url = 'https://api.weatherapi.com/v1/';
@@ -18,6 +23,7 @@ function WeatherApp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [permission, setPermission] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   // useEffect(() => {
   //   setInterval(function () {
@@ -33,11 +39,9 @@ function WeatherApp() {
     }
   }, [permission]);
 
-  console.log(permission);
-
   useEffect(() => {
-    // api call runs on button confirmation in Location
-    // and if permission is granted
+    // api call runs on refresh
+    setLoading(true);
     fetchWeatherData();
   }, [lat, long]);
 
@@ -56,11 +60,8 @@ function WeatherApp() {
 
   // api call for 3 day forecast
   const fetchWeatherData = async () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-      setLoading(true);
-    });
+    // set this as initial state
+
     try {
       const { data } = await axios.get(
         `${url}forecast.json?key=${apiKey}&q=${lat},${long}&days=3`
@@ -69,6 +70,17 @@ function WeatherApp() {
       setWeatherData(data);
     } catch (err) {
       setError('Error: Could not retrieve data. Please try again.');
+    }
+  };
+
+  const searchLocation = async (input) => {
+    try {
+      const { data } = await axios.get(
+        `${url}search.json?key=${apiKey}&q=${input}`
+      );
+      setSearchResults(data);
+    } catch (err) {
+      console.log(err.message, 'error');
     }
   };
 
@@ -84,7 +96,13 @@ function WeatherApp() {
         loading ? (
           <h3 className='loading-msg'>Fetching data...</h3>
         ) : weatherData?.current && weatherData?.location ? (
-          <WeatherCards weatherData={weatherData} />
+          <WeatherCards
+            weatherData={weatherData}
+            searchLocation={searchLocation}
+            searchResults={searchResults}
+            setLat={setLat}
+            setLong={setLong}
+          />
         ) : (
           <h3 className='loading-msg'>{error}</h3>
         )

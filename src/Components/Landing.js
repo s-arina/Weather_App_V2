@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../CSS/Location.css';
+import '../CSS/Landing.css';
 
 function Landing({ permission }) {
   return (
