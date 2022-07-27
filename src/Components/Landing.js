@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { GithubIcon, LinkedInIcon, Portfolio } from './Icons';
 import '../CSS/Landing.css';
 

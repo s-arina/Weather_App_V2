@@ -27,8 +27,7 @@ function WeatherApp() {
   // }, []);
 
   useEffect(() => {
-    // PERMISSIONS API
-    // run this FIRST useEffect to set the state before api call
+    // permissions api
     if (permission !== 'granted') {
       navigator.permissions
         .query({ name: 'geolocation' })
@@ -47,19 +46,6 @@ function WeatherApp() {
     setLoading(true);
     fetchWeatherData();
   }, [lat, long]);
-
-  // const locationPermission = () => {
-  //   // https://developer.chrome.com/blog/permissions-api-for-the-web/
-  //   navigator.permissions
-  //     .query({ name: 'geolocation' })
-  //     .then(function (permissionStatus) {
-  //       setPermission(permissionStatus.state);
-
-  //       permissionStatus.onchange = function () {
-  //         setPermission(this.state);
-  //       };
-  //     });
-  // };
 
   // api call for 3 day forecast
   const fetchWeatherData = async () => {
