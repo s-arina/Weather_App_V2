@@ -7,11 +7,6 @@ import DateTime from './DateTime';
 import Landing from './Landing';
 
 function WeatherApp() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    setLat(position.coords.latitude);
-    setLong(position.coords.longitude);
-  });
-
   const apiKey = process.env.REACT_APP_WEATHER_API;
 
   const url = 'https://api.weatherapi.com/v1/';
@@ -35,7 +30,15 @@ function WeatherApp() {
     // PERMISSIONS API
     // run this FIRST useEffect to set the state before api call
     if (permission !== 'granted') {
-      locationPermission();
+      navigator.permissions
+        .query({ name: 'geolocation' })
+        .then(function (permissionStatus) {
+          setPermission(permissionStatus.state);
+
+          permissionStatus.onchange = function () {
+            setPermission(this.state);
+          };
+        });
     }
   }, [permission]);
 
@@ -45,23 +48,25 @@ function WeatherApp() {
     fetchWeatherData();
   }, [lat, long]);
 
-  const locationPermission = () => {
-    // https://developer.chrome.com/blog/permissions-api-for-the-web/
-    navigator.permissions
-      .query({ name: 'geolocation' })
-      .then(function (permissionStatus) {
-        setPermission(permissionStatus.state);
+  // const locationPermission = () => {
+  //   // https://developer.chrome.com/blog/permissions-api-for-the-web/
+  //   navigator.permissions
+  //     .query({ name: 'geolocation' })
+  //     .then(function (permissionStatus) {
+  //       setPermission(permissionStatus.state);
 
-        permissionStatus.onchange = function () {
-          setPermission(this.state);
-        };
-      });
-  };
+  //       permissionStatus.onchange = function () {
+  //         setPermission(this.state);
+  //       };
+  //     });
+  // };
 
   // api call for 3 day forecast
   const fetchWeatherData = async () => {
-    // set this as initial state
-
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+    });
     try {
       const { data } = await axios.get(
         `${url}forecast.json?key=${apiKey}&q=${lat},${long}&days=3`
@@ -86,9 +91,7 @@ function WeatherApp() {
 
   return (
     <div className='weather-app'>
-      {/prompt|denied|^$/gi.test(permission) && (
-        <Landing permission={permission} />
-      )}
+      {permission !== 'granted' && <Landing permission={permission} />}
 
       {/* <DateTime date={date} /> */}
 
@@ -99,6 +102,7 @@ function WeatherApp() {
           <WeatherCards
             weatherData={weatherData}
             searchLocation={searchLocation}
+            setSearchResults={setSearchResults}
             searchResults={searchResults}
             setLat={setLat}
             setLong={setLong}

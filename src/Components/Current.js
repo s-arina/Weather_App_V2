@@ -14,6 +14,7 @@ function Current({
   card,
   setShowInfo,
   searchLocation,
+  setSearchResults,
   searchResults,
   setLat,
   setLong,
@@ -41,12 +42,13 @@ function Current({
 
   return (
     <div className='current-main'>
-      <LocationSearch
+      {/* <LocationSearch
         searchLocation={searchLocation}
+        setSearchResults={setSearchResults}
         searchResults={searchResults}
         setLat={setLat}
         setLong={setLong}
-      />
+      /> */}
       <div className='current-date'>
         <h2>{location.name}</h2>
         <h3>

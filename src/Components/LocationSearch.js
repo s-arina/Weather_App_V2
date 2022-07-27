@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import '../CSS/Location.css';
 
-function LocationSearch({ searchLocation, searchResults, setLat, setLong }) {
+function LocationSearch({
+  searchLocation,
+  setSearchResults,
+  searchResults,
+  setLat,
+  setLong,
+}) {
   // if name matches object[0].name, or name is chosen from list, set Long/Lat
   // else, show a pop up list of locations
   // error: Location not found, please check spelling or be more specific.
@@ -18,12 +24,11 @@ function LocationSearch({ searchLocation, searchResults, setLat, setLong }) {
     searchLocation(input);
   }
 
-  function handleCoordinates(lat, lon) {
+  function handleCoordinates(e, lat, lon) {
+    e.preventDefault();
     setLat(lat);
     setLong(lon);
   }
-
-  console.log(searchResults);
 
   return (
     <div className='lookup'>
@@ -34,16 +39,17 @@ function LocationSearch({ searchLocation, searchResults, setLat, setLong }) {
           onChange={(e) => onChange(e)}
         />
       </form>
-      <div className='results'>
-        {searchResults
-          ? searchResults.map((res) => (
-              <h2 onClick={() => handleCoordinates(res.lat, res.lon)}>
-                {res.name}
-              </h2>
-            ))
-          : null}
-        <button></button>
-      </div>
+      {searchResults.length > 0 ? (
+        <div className='results'>
+          {searchResults.map((res) => (
+            <h2 onClick={(e) => handleCoordinates(e, res.lat, res.lon)}>
+              {res.name}
+            </h2>
+          ))}
+
+          <button onClick={() => setSearchResults([])}></button>
+        </div>
+      ) : null}
     </div>
   );
 }

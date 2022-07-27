@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { GithubIcon, LinkedInIcon, Portfolio } from './Icons';
 import '../CSS/Landing.css';
 
 function Landing({ permission }) {
@@ -14,6 +15,13 @@ function Landing({ permission }) {
       {permission !== 'granted' ? (
         <h3>Please enable location in browser to continue.</h3>
       ) : null}
+      <div className='info-card-landing'>
+        <div className='icons'>
+          {GithubIcon}
+          {LinkedInIcon}
+          {Portfolio}
+        </div>
+      </div>
     </div>
   );
 }

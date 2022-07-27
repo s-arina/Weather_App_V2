@@ -14,10 +14,25 @@
   }
 
   h3 {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 1rem 1.5rem;
     border-radius: 2rem;
     letter-spacing: 1px;
     color: var(--offwhite);
+  }
+
+  .info-card-landing {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+    svg {
+      width: 2rem;
+      height: 100%;
+      fill: transparent;
+    }
   }
 }
