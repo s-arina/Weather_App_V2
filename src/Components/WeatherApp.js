@@ -41,9 +41,7 @@ function WeatherApp() {
       long: long,
     };
     try {
-      // how to not need localhost when deployment? /api route
       axios.post('/api', payload).then((res) => {
-        // axios.post('http://localhost:3001/api', payload).then((res) => {
         console.log(res.data);
         setWeatherData(res.data);
         setLoading(false);
