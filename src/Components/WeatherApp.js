@@ -67,7 +67,8 @@ function WeatherApp() {
 
   return (
     <div className='weather-app'>
-      {permission !== 'granted' && <Landing permission={permission} />}
+      <h3 className='loading-msg'>Under construction...</h3>
+      {/* {permission !== 'granted' && <Landing permission={permission} />}
       {permission === 'granted' && loading && (
         <h3 className='loading-msg'>Fetching data...</h3>
       )}
@@ -79,7 +80,7 @@ function WeatherApp() {
           setLat={setLat}
           setLong={setLong}
         />
-      )}
+      )} */}
     </div>
   );
 }
