@@ -4,13 +4,7 @@ import axios from 'axios';
 import WeatherCards from './WeatherCards';
 import MobilePreview from './MobilePreview';
 import Landing from './Landing';
-import { useCallback } from 'react';
-
 function WeatherApp() {
-  const apiKey = process.env.REACT_APP_WEATHER_API;
-
-  const url = 'http://api.weatherapi.com/v1/';
-
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [weatherData, setWeatherData] = useState([]);
@@ -48,7 +42,8 @@ function WeatherApp() {
     };
     try {
       // how to not need localhost when deployment? /api route
-      axios.post('http://localhost:3001/api', payload).then((res) => {
+      axios.post('/api', payload).then((res) => {
+        // axios.post('http://localhost:3001/api', payload).then((res) => {
         console.log(res.data);
         setWeatherData(res.data);
         setLoading(false);
