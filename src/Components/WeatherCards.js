@@ -7,7 +7,6 @@ import '../CSS/Stars.css';
 
 function WeatherCards({
   weatherData,
-  searchLocation,
   setSearchResults,
   searchResults,
   setLat,
@@ -59,7 +58,6 @@ function WeatherCards({
           location={location}
           card={card}
           setShowInfo={setShowInfo}
-          searchLocation={searchLocation}
           setSearchResults={setSearchResults}
           searchResults={searchResults}
           setLat={setLat}

@@ -7,18 +7,7 @@ import '../CSS/Card.css';
 import '../CSS/Stars.css';
 import LocationSearch from './LocationSearch';
 
-function Current({
-  current,
-  forecast,
-  location,
-  card,
-  setShowInfo,
-  searchLocation,
-  setSearchResults,
-  searchResults,
-  setLat,
-  setLong,
-}) {
+function Current({ current, forecast, location, card, setShowInfo }) {
   // current is only being used for todays temp
   const today = forecast[0];
   const [chosenDateInfo, setChosenDateInfo] = useState(today);
@@ -42,13 +31,6 @@ function Current({
 
   return (
     <div className='current-main'>
-      {/* <LocationSearch
-        searchLocation={searchLocation}
-        setSearchResults={setSearchResults}
-        searchResults={searchResults}
-        setLat={setLat}
-        setLong={setLong}
-      /> */}
       <div className='current-date'>
         <h2>{location.name}</h2>
         <h3>
