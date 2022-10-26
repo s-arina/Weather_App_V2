@@ -36,7 +36,7 @@
 
 5. Deployment
 
-- render is on auto deploy after pushes
+- set to NOT auto deploy
 - for local development, post payload to `http://localhost:3001`
 - for deployment, payload must be send to the server on hosted site `https://weather-sc-server.onrender.com`
 
@@ -45,3 +45,4 @@
 - cloned app -> git push origin main
 - client/server can't run on the same port, start them up seperately
 - client on 3000, port on 3001
+- insomnia to test routes
