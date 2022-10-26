@@ -39,5 +39,5 @@
   "devDependencies": {
     "@iconify/react": "^3.2.2"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "https://weather-sc.onrender.com"
 }
