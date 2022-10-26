@@ -24,13 +24,13 @@ app.use(
 // static middleware
 app.use(express.static(__dirname + '../frontend/public'));
 
-app.get('/', (req, res) => {
-  res.send('Testing');
-});
+// app.get('/', (req, res) => {
+//   res.send('Testing');
+// });
 
 // routes
 // coordinates sent from frontend on page load
-app.post('/api', jsonParser, async (req, res) => {
+app.post('/', jsonParser, async (req, res) => {
   const lat = req.body.lat;
   const long = req.body.long;
   // api call

@@ -40,10 +40,10 @@ function WeatherApp() {
       long: long,
     };
     try {
-      // axios.post('http://localhost:3001/api', payload).then((res) => {
       axios
-        .post('https://weather-sc-server.onrender.com/api', payload)
+        .post('https://weather-sc-server.onrender.com', payload)
         .then((res) => {
+          // axios.post('/api', payload).then((res) => {
           setWeatherData(res.data);
           setLoading(false);
         });
