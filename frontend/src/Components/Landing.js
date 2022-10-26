@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GithubIcon, LinkedInIcon, Portfolio } from './Icons';
 import '../CSS/Landing.css';
 

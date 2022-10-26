@@ -24,11 +24,8 @@ app.use(
 // static middleware
 app.use(express.static(__dirname + '../frontend/public'));
 
-// app.get('/', (req, res) => {
-//   res.send('Testing');
-// });
-
 // routes
+
 // coordinates sent from frontend on page load
 app.post('/', jsonParser, async (req, res) => {
   const lat = req.body.lat;

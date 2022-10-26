@@ -2,14 +2,14 @@ import '../CSS/WeatherApp.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import WeatherCards from './WeatherCards';
-import MobilePreview from './MobilePreview';
+// import MobilePreview from './MobilePreview';
 import Landing from './Landing';
+
 function WeatherApp() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [weatherData, setWeatherData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
   const [permission, setPermission] = useState('');
 
   useEffect(() => {
@@ -34,27 +34,7 @@ function WeatherApp() {
     postCoords();
   }, [lat, long]);
 
-  const postCoords = () => {
-    const payload = {
-      lat: lat,
-      long: long,
-    };
-    try {
-      axios
-        .post('https://weather-sc-server.onrender.com', payload)
-        .then((res) => {
-          // axios.post('/api', payload).then((res) => {
-          setWeatherData(res.data);
-          setLoading(false);
-        });
-    } catch {
-      console.log(
-        'Error: Could not retrieve current position. Please try again.'
-      );
-    }
-  };
-
-  // api call for 3 day forecast
+  // get user location/coordinates
   const fetchLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -66,9 +46,30 @@ function WeatherApp() {
     }
   };
 
+  // send coorindates to server
+  const postCoords = () => {
+    const payload = {
+      lat: lat,
+      long: long,
+    };
+    try {
+      axios
+        // local testing
+        // .post('http://localhost:3001', payload)
+        .post('https://weather-sc-server.onrender.com', payload)
+        .then((res) => {
+          setWeatherData(res.data);
+          setLoading(false);
+        });
+    } catch {
+      console.log(
+        'Error: Could not retrieve current position. Please try again.'
+      );
+    }
+  };
+
   return (
     <div className='weather-app'>
-      {/* <h3 className='loading-msg'>Under construction...</h3> */}
       {permission !== 'granted' && <Landing permission={permission} />}
       {permission === 'granted' && loading && (
         <h3 className='loading-msg'>Fetching data...</h3>

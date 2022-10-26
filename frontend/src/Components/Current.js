@@ -5,7 +5,6 @@ import Sun from './Sun';
 import Moon from './Moon';
 import '../CSS/Card.css';
 import '../CSS/Stars.css';
-import LocationSearch from './LocationSearch';
 
 function Current({ current, forecast, location, card, setShowInfo }) {
   // current is only being used for todays temp

@@ -51,7 +51,7 @@ export const reload = (
 // ========================= INFO ICONS
 export const GithubIcon = (
   <a
-    href='https://github.com/s-arina/Weather_App'
+    href='https://github.com/s-arina/Weather_App_V2'
     target='_blank'
     rel='noreferrer'
   >
