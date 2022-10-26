@@ -41,7 +41,7 @@ function WeatherApp() {
     };
     try {
       axios.post('/api', payload).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setWeatherData(res.data);
         setLoading(false);
       });

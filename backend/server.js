@@ -24,6 +24,10 @@ app.use(
 // static middleware
 app.use(express.static(__dirname + '../public'));
 
+app.get('/', (req, res) => {
+  res.send('Testing');
+});
+
 // routes
 // coordinates sent from frontend on page load
 app.post('/api', jsonParser, async (req, res) => {
