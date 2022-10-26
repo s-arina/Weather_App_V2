@@ -40,11 +40,13 @@ function WeatherApp() {
       long: long,
     };
     try {
-      axios.post('/api', payload).then((res) => {
-        // console.log(res.data);
-        setWeatherData(res.data);
-        setLoading(false);
-      });
+      // axios.post('http://localhost:3001/api', payload).then((res) => {
+      axios
+        .post('https://weather-sc-server.onrender.com/api', payload)
+        .then((res) => {
+          setWeatherData(res.data);
+          setLoading(false);
+        });
     } catch {
       console.log(
         'Error: Could not retrieve current position. Please try again.'

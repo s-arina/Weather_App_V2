@@ -22,7 +22,7 @@ app.use(
 );
 
 // static middleware
-app.use(express.static(__dirname + '../public'));
+app.use(express.static(__dirname + '../frontend/public'));
 
 app.get('/', (req, res) => {
   res.send('Testing');
@@ -45,7 +45,9 @@ app.post('/api', jsonParser, async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../public/index.html'));
+  res
+    .status(200)
+    .sendFile(path.resolve(__dirname, '../frontend/public/index.html'));
 });
 
 app.listen(PORT, () => {
